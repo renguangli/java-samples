@@ -402,15 +402,15 @@ a {
   text-decoration: none; }
 
 h1 {
-  font-size: 26px;
-  font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
-
-h2 {
   font-size: 24px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
+h2 {
+  font-size: 21px;
+  font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
+
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 h4 {
@@ -523,7 +523,7 @@ h6 {
     margin-bottom: 10px; }
     .post .post-header .post-title {
       margin: 0;
-      font-size: 27px;
+      font-size: 24px;
       font-weight: 400;
       font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
     .post .post-header .post-link {
