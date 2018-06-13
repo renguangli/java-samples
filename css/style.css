@@ -676,7 +676,7 @@ h6 {
     padding: 7px;
     font-size: 13px;
     font-family: Consolas, Monaco, Menlo, Consolas, monospace;
-    background: #f6f8fa; }
+    background: #f9f2f4; }
   .post .post-content code {
     padding: 3px 5px;
     border-radius: 4px;
@@ -698,7 +698,7 @@ h6 {
         font-size: 13px;
         font-weight: bold;
         color: #b1b1b1;
-        background: #ecf0f5;
+        background: #f4e8eb;
         content: 'Code'; }
     .post .post-content .highlight.html > table::after {
       content: "HTML"; }
@@ -834,7 +834,7 @@ h6 {
       font-size: 13px;
       font-weight: bold;
       color: #b1b1b1;
-      background: #ecf0f5;
+      background: #f4e8eb;
       z-index: 20;
       overflow-x: hidden;
       box-sizing: border-box; }
