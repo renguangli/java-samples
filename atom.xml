@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://renguangli.com/"/>
-  <updated>2018-06-14T09:55:50.488Z</updated>
+  <updated>2018-06-14T10:00:55.117Z</updated>
   <id>https://renguangli.com/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="https://renguangli.com/article/jdk-jre-jvm.html"/>
     <id>https://renguangli.com/article/jdk-jre-jvm.html</id>
     <published>2018-06-14T09:54:52.000Z</published>
-    <updated>2018-06-14T09:55:50.488Z</updated>
+    <updated>2018-06-14T10:00:55.117Z</updated>
     
-    <content type="html"><![CDATA[<p> 下面贴一张图来看看他们之间的关系<br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/JDK%E3%80%81JRE%E3%80%81JVM.png" alt="JDK.JRE.JVM"><br><a id="more"></a><br>什么是jdk、jre、jvm？</p><ul><li><code>JDK</code>(Java Development Kit) 是Java语言的软件开发工具包，包含了一些开发工具如编译器、调试器等，还有JAVA运行时环境<code>JRE</code>。</li><li><code>jRE</code>（Java Runtime Environment，Java运行环境），包含JVM标准实现及Java核心类库。JRE是Java运行环境，如果你想要运行java程序，只需要安装JRE即可。</li><li><code>JVM</code>是Java Virtual Machine（Java虚拟机）的缩写，JVM是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。 </li></ul>]]></content>
+    <content type="html"><![CDATA[<p>下面贴一张图来看看他们之间的关系</p><p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png" alt="JDK.JRE.JVM"><br><a id="more"></a><br>什么是jdk、jre、jvm？</p><ul><li><code>JDK</code>(Java Development Kit) 是Java语言的软件开发工具包，包含了一些开发工具如编译器、调试器等，还有JAVA运行时环境<code>JRE</code>。</li><li><code>jRE</code>（Java Runtime Environment，Java运行环境），包含JVM标准实现及Java核心类库。JRE是Java运行环境，如果你想要运行java程序，只需要安装JRE即可。</li><li><code>JVM</code>是Java Virtual Machine（Java虚拟机）的缩写，JVM是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。 </li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt; 下面贴一张图来看看他们之间的关系&lt;br&gt;&lt;img src=&quot;https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/JDK%E3%80%81JRE%E3%80%81JVM.png&quot; alt=&quot;JDK.JRE.JVM&quot;&gt;&lt;br&gt;
+      &lt;p&gt;下面贴一张图来看看他们之间的关系&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png&quot; alt=&quot;JDK.JRE.JVM&quot;&gt;&lt;br&gt;
     
     </summary>
     
