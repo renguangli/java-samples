@@ -38,79 +38,6 @@
   </entry>
   
   <entry>
-    <title>HashMap中的key</title>
-    <link href="https://renguangli.com/article/map-key.html"/>
-    <id>https://renguangli.com/article/map-key.html</id>
-    <published>2018-06-04T09:48:20.000Z</published>
-    <updated>2018-06-11T09:47:45.051Z</updated>
-    
-    <content type="html"><![CDATA[<p>HashMap是一种用哈希值来存储和查找键值对（key-value pair，也称作entry）的一种数据结构。</p><h3 id="不可变类作为HashMap的key带来的影响"><a href="#不可变类作为HashMap的key带来的影响" class="headerlink" title="不可变类作为HashMap的key带来的影响"></a>不可变类作为HashMap的key带来的影响</h3><p>我们都知道HashMap的key必须是不可变对象，例如String，Integer等，那么如果用可变对象作为HashMap的key有什么影响呢？下面看一段代码<br>定义:<br><a id="more"></a><br><strong>什么是不可变类？</strong><br>不可变类的意思是创建该类的实例后，该实例的属性是不可改变的；所以不可变类并不是指该类是被final修饰的，而是指该类的属性是被final修饰的自定义不可变类遵守如下原则：</p><ul><li>使用private和final修饰符来修饰该类的属性。</li><li>提供带参数的构造器，用于根据传入的参数来初始化属性。</li><li>仅为该类属性提供getter方法，不要提供setter方法。</li><li>如果有必要，重写hashCode和equals方法，同时应保证两个用equals方法判断为相等的对象，其hashCode也应相等</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义User类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getter/setter ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HashMap是一种用哈希值来存储和查找键值对（key-value pair，也称作entry）的一种数据结构。&lt;/p&gt;
-&lt;h3 id=&quot;不可变类作为HashMap的key带来的影响&quot;&gt;&lt;a href=&quot;#不可变类作为HashMap的key带来的影响&quot; class=&quot;headerlink&quot; title=&quot;不可变类作为HashMap的key带来的影响&quot;&gt;&lt;/a&gt;不可变类作为HashMap的key带来的影响&lt;/h3&gt;&lt;p&gt;我们都知道HashMap的key必须是不可变对象，例如String，Integer等，那么如果用可变对象作为HashMap的key有什么影响呢？下面看一段代码&lt;br&gt;定义:&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HashMap" scheme="https://renguangli.com/tags/HashMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Map之间的比较</title>
-    <link href="https://renguangli.com/article/01b9def0-63e1-11e8-9c6e-67f722e0ee44.html"/>
-    <id>https://renguangli.com/article/01b9def0-63e1-11e8-9c6e-67f722e0ee44.html</id>
-    <published>2018-05-30T08:11:08.000Z</published>
-    <updated>2018-05-30T08:11:08.261Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>有关Map的面试题(持续更新中...)</title>
-    <link href="https://renguangli.com/article/map.html"/>
-    <id>https://renguangli.com/article/map.html</id>
-    <published>2018-05-30T03:35:35.000Z</published>
-    <updated>2018-06-11T09:47:14.154Z</updated>
-    
-    <content type="html"><![CDATA[<p>Map是我们常用的集合类，在面试中经常被问到，所以我们要彻底掌握它。以下是我整理的有关Map的面试题以及一些自己的理解，希望可以帮助到大家。<br><a id="more"></a></p><h3 id="1、所有的类都可以作为Map中的key吗？有什么需要注意的问题？"><a href="#1、所有的类都可以作为Map中的key吗？有什么需要注意的问题？" class="headerlink" title="1、所有的类都可以作为Map中的key吗？有什么需要注意的问题？"></a>1、所有的类都可以作为Map中的key吗？有什么需要注意的问题？</h3><p>Map中的key必须是不可变类，如果非要用可变类作为key，则必须重写equals和hashCode方法。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Map是我们常用的集合类，在面试中经常被问到，所以我们要彻底掌握它。以下是我整理的有关Map的面试题以及一些自己的理解，希望可以帮助到大家。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>了解JAVA虚拟机-运行时数据区域</title>
-    <link href="https://renguangli.com/article/jvm-runtime-area.html"/>
-    <id>https://renguangli.com/article/jvm-runtime-area.html</id>
-    <published>2018-05-30T03:02:15.000Z</published>
-    <updated>2018-06-11T09:47:22.049Z</updated>
-    
-    <content type="html"><![CDATA[<p>JVM虚拟机把它所管理的内存划分为若干个用途不同的内存区域，包括程序计数器、JAVA虚拟机栈、本地方法栈、堆、方法区、运行时常量池、直接内存。这些区域中方法区和堆是线程共享的，其他是线程私有的。<br><a id="more"></a></p><h2 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h2><p>程序计数器可以看作当前线程所执行字节码的行号指示器，字节码解释器通过改变计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等基础功能都要依赖这个计数器来完成。</p><ul><li>如果线程执行的是java方法则计数器记录的是正在执行的字节码指令的地址</li><li>如果线程线性的是native方法则计数器的值为空。</li></ul><p>程序计数器是一块较小的内存区域，而且是JVM规范中唯一一处没有规定OutOfMemoryError异常的内存区域</p><h2 id="JAVA虚拟机栈"><a href="#JAVA虚拟机栈" class="headerlink" title="JAVA虚拟机栈"></a>JAVA虚拟机栈</h2><p>JAVA虚拟机栈描述的是JAVA方法执行的内存模型。<br>每个方法在执行的同时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。<br>每一个方法从执行到结束的过程都对应一个栈帧从入栈到出栈的过程</p><p>人们经常JAVA内存分为堆内存和栈内存，其中栈指的就是JAVA虚拟机栈，或者说是JAVA虚拟机栈中的局部变量表。局部变量表保存了编译器可知的各种基本数据类型（byte、short、int、long、float、double，boolean、char)、对象引用(reference)、返回地址(returnAddress).其中64位长度的long和double会占用2个局部变量空间(Slot),其余数据类型占用1个局部变量表空间。局部变量表的内存大小在编译器就确定好了，在方法运行期间不会改变其内存大小。</p><p>在JAVA虚拟机规范中对JAVA虚拟机栈规定了两种异常</p><ul><li>如果线程请求的栈深度大于JAVA虚拟机栈的深度，就会抛出StackOverFlowError异常</li><li>如果JAVA虚拟机栈可以动态扩展且动态扩展是无法申请到足够的内存就会抛出OutOfMemoryError异常</li></ul><h2 id="JAVA堆"><a href="#JAVA堆" class="headerlink" title="JAVA堆"></a>JAVA堆</h2><p>JAVA堆是所有线程共享的一块内存，几乎所有的对象实例都在这里分配。JAVA堆分为老年代和新生代，再吸一点有Eden空间，Frovivor，To Survivor空间等。<br>如果在堆中无法完成对象实例的内存分配，并且堆无法在扩展时，JVM将会发生OutOfMemoryError错误。</p><h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2><p>方法区跟JAVA堆一样是所有线程共享的一块内存区域，它存储了已被虚拟机加载的类信息、常量、静态变量、即时编译器编译的代码等。他还有两个别名非堆和永久代。当方法区无法完成内存分配是将抛出OutOfMemoryError错误。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JVM虚拟机把它所管理的内存划分为若干个用途不同的内存区域，包括程序计数器、JAVA虚拟机栈、本地方法栈、堆、方法区、运行时常量池、直接内存。这些区域中方法区和堆是线程共享的，其他是线程私有的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="JVM" scheme="https://renguangli.com/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每天学点儿linux--centos配置nginx-yum源</title>
     <link href="https://renguangli.com/article/nginx-yum.html"/>
     <id>https://renguangli.com/article/nginx-yum.html</id>
@@ -192,28 +119,6 @@
     
     
       <category term="java" scheme="https://renguangli.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之代理模式</title>
-    <link href="https://renguangli.com/article/java-proxy.html"/>
-    <id>https://renguangli.com/article/java-proxy.html</id>
-    <published>2017-11-05T13:17:32.000Z</published>
-    <updated>2018-06-11T09:46:42.060Z</updated>
-    
-    <content type="html"><![CDATA[<p>什么是代理模式呢？我很忙，忙的没空理你，那你要找我呢就先找我的代理人吧，那代理人总要知道<br>被代理人能做哪些事情不能做哪些事情吧，那就是两个人具备同一个接口，代理人虽然不能干活，但是被<br>代理的人能干活呀<br><a id="more"></a></p><h2 id="定义一个User接口"><a href="#定义一个User接口" class="headerlink" title="定义一个User接口"></a>定义一个User接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * User</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:30</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">login</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">logout</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="在定义一个RealUser类实现User接口"><a href="#在定义一个RealUser类实现User接口" class="headerlink" title="在定义一个RealUser类实现User接口"></a>在定义一个RealUser类实现User接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * RealUser</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:41</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RealUser</span> <span class="keyword">implements</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">logout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="在定义一个User代理类"><a href="#在定义一个User代理类" class="headerlink" title="在定义一个User代理类"></a>在定义一个User代理类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * UserProxy</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:42</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserProxy</span> <span class="keyword">implements</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> User user;</span><br><span class="line">    <span class="comment">//默认代理RealUser</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserProxy</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.user = <span class="keyword">new</span> RealUser();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserProxy</span><span class="params">(User user)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.user = user;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        user.login();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">logout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        user.logout();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ProxyTest</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:45</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        UserProxy userProxy = <span class="keyword">new</span> UserProxy();</span><br><span class="line">        userProxy.login();</span><br><span class="line">        userProxy.logout();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出<br>com.renguangli.pattern23.proxy.RealUser<br>com.renguangli.pattern23.proxy.RealUser<br>看起来像是UserProxy在登录退出，实际上是RealUser</p><h2 id="在来一个FakeUser类实现User接口"><a href="#在来一个FakeUser类实现User接口" class="headerlink" title="在来一个FakeUser类实现User接口"></a>在来一个FakeUser类实现User接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * FakeUser</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:44</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FakeUser</span> <span class="keyword">implements</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">logout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="再测一下"><a href="#再测一下" class="headerlink" title="再测一下"></a>再测一下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ProxyTest</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> renguangli 2017/10/25 16:45</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> JDK 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FakeUser fakeUser = <span class="keyword">new</span> FakeUser();</span><br><span class="line">        UserProxy userProxy = <span class="keyword">new</span> UserProxy(fakeUser);</span><br><span class="line">        userProxy.login();</span><br><span class="line">        userProxy.logout();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出<br>com.renguangli.pattern23.proxy.FakeUser<br>com.renguangli.pattern23.proxy.FakeUser</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>代理模式主要使用了Java的多态，干活的是被代理类，代理类主要是接活，那怎么知道被代理类能不能干呢，就是代理类和被代理类实现同一个接口</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;什么是代理模式呢？我很忙，忙的没空理你，那你要找我呢就先找我的代理人吧，那代理人总要知道&lt;br&gt;被代理人能做哪些事情不能做哪些事情吧，那就是两个人具备同一个接口，代理人虽然不能干活，但是被&lt;br&gt;代理的人能干活呀&lt;br&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="https://renguangli.com/categories/java/"/>
-    
-    
-      <category term="设计模式" scheme="https://renguangli.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
