@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://renguangli.com/"/>
-  <updated>2018-06-16T11:38:50.972Z</updated>
+  <updated>2018-06-18T08:42:29.533Z</updated>
   <id>https://renguangli.com/</id>
   
   <author>
@@ -17,73 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>什么是JDK、JRE、JVM？</title>
-    <link href="https://renguangli.com/article/jdk-jre-jvm.html"/>
-    <id>https://renguangli.com/article/jdk-jre-jvm.html</id>
-    <published>2018-06-14T09:54:52.000Z</published>
-    <updated>2018-06-16T11:38:50.972Z</updated>
-    
-    <content type="html"><![CDATA[<p>下面贴一张图来看看他们之间的关系</p><p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png" alt="JDK.JRE.JVM"><br><a id="more"></a><br>再看一张java官方更详细的结构图</p><p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java.png" alt="java组成结构"></p><h3 id="什么是jdk、jre、jvm？"><a href="#什么是jdk、jre、jvm？" class="headerlink" title="什么是jdk、jre、jvm？"></a>什么是jdk、jre、jvm？</h3><p><code>JDK</code>(Java Development Kit) 是Java语言的软件开发工具包，包含了一些开发工具JAVA运行时环境<code>JRE</code>。<br>jdk包含的开发工具有：</p><ul><li>javac – 编译器，将源程序转成字节码</li><li>jar – 打包工具，将相关的类文件打包成一个文件</li><li>javadoc – 文档生成器，从源码注释中提取文档</li><li>jdb – debugger，查错工具</li><li>java – 运行编译后的java程序（.class后缀的）</li><li>appletviewer：小程序浏览器，一种执行HTML文件上的Java小程序的Java浏览器。</li><li>Javah：产生可以调用Java过程的C过程，或建立能被Java程序调用的C过程的头文件。</li><li>Javap：Java反汇编器，显示编译类文件中的可访问功能和数据，同时显示字节代码含义。</li><li>console: Java进行系统调试和监控的工具<br>……</li></ul><p><code>jRE</code>（Java Runtime Environment，Java运行环境），包含JVM标准实现及Java核心类库。JRE是Java运行环境，如果你只想运行java程序，只需要安装JRE即可。</p><p><code>JVM</code>是Java Virtual Machine（Java虚拟机）的缩写，JVM是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。 java的一次编写、出处运行就是基于JVM实现的。</p><h3 id="JDK、JRE、JVM的用途"><a href="#JDK、JRE、JVM的用途" class="headerlink" title="JDK、JRE、JVM的用途"></a>JDK、JRE、JVM的用途</h3><p>JDK是用来开发java程序所必须的。</p><p>JRE是java程序运行所必须的。</p><p>JVM是用来加载class文件也是一次编写、处处运行的实现。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;下面贴一张图来看看他们之间的关系&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png&quot; alt=&quot;JDK.JRE.JVM&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://renguangli.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每天学点儿linux--centos配置nginx-yum源</title>
-    <link href="https://renguangli.com/article/nginx-yum.html"/>
-    <id>https://renguangli.com/article/nginx-yum.html</id>
-    <published>2018-05-21T03:15:31.000Z</published>
-    <updated>2018-06-12T02:06:08.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>创建/etc/yum.repos.d/nginx.repo文件，并添加一下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo</span><br><span class="line">baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure><a id="more"></a><p>将OS替换为“rhel” 或者 “centos”， “OSRELEASE”替换为7或6,取决与你的centos系统版本，6代表6.X版本，7代表7.X版本。替换完之后保存文件，然后就可以使用yum安装nignx了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure><p>参考资料<br><a href="http://nginx.org/en/linux_packages.html" target="_blank" rel="noopener">http://nginx.org/en/linux_packages.html</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;创建/etc/yum.repos.d/nginx.repo文件，并添加一下内容&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[nginx]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;name=nginx repo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gpgcheck=0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;enabled=1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="nginx" scheme="https://renguangli.com/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每天学点儿linux--centos7开放端口号</title>
-    <link href="https://renguangli.com/article/centos-open-port.html"/>
-    <id>https://renguangli.com/article/centos-open-port.html</id>
-    <published>2018-05-15T11:44:20.000Z</published>
-    <updated>2018-06-11T09:46:22.952Z</updated>
-    
-    <content type="html"><![CDATA[<p>开放80端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>命令含义：  </p><ul><li>–zone #作用域  </li><li>–add-port=80/tcp  #添加端口，格式为：端口/通讯协议  </li><li>–permanent  #永久生效，没有此参数重启后失效  </li></ul><p>关闭80端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd  --zone=public --remove-port=80/tcp --permanent</span><br></pre></td></tr></table></figure><p>查看防火墙状态</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld.service</span><br></pre></td></tr></table></figure><p>启动|关闭|重新启动  防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl [start|stop|restart] firewalld.service</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;开放80端口&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;firewall-cmd --zone=public --add-port=80/tcp --permanent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="每天学点儿linux" scheme="https://renguangli.com/tags/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E7%82%B9%E5%84%BFlinux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每天学点儿linux--vi编辑器的使用</title>
     <link href="https://renguangli.com/article/linux-vi.html"/>
     <id>https://renguangli.com/article/linux-vi.html</id>
-    <published>2018-05-15T11:42:19.000Z</published>
-    <updated>2018-06-11T09:46:51.936Z</updated>
+    <published>2019-08-15T11:42:19.000Z</published>
+    <updated>2018-06-18T08:42:29.533Z</updated>
     
     <content type="html"><![CDATA[<p>vi编辑器是Linux系统下标准的编辑器，一般linux都没有桌面环境，平常修改一些配置文件，编写脚本对于vi编辑器来说都很方便，所以我们有必要学会并熟练使用它。<br>vi编辑器可以分为三种状态，分别是命令模式、插入模式和底行模式  </p><ul><li>命令行模式：控制屏幕光标的移动、字符、字或行的删除，移动复制某区段及进入插入模式下，或者到底行模式。   </li><li>插入模式：只有在插入模式下，才可以做文字输入，按「ESC」键可回到命令行模式。</li><li>底行模式：将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号……等。 <a id="more"></a></li></ul><p>下面列举一些常用命令和技巧</p><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>我们如何进入vi编辑器呢？<br>输入<code>vi fileName</code>命令进入vi编辑器，这时处于命令行模式。<br>在命令模式下按下<code>i</code>字母就会进入插入模式，这时就可以对对文件进行编辑了。<br>那我们如何退出vi编辑器呢？<br>在命令行模式下，按一下 <code>:</code>冒号键进入底行模式</p><ul><li><code>:w</code>保存但不退出。</li><li><code>:w fileName</code>文件另存为filename。</li><li><code>:wq</code>保存并退出。</li><li><code>:q</code>退出但不保存。<br>在末尾加入<code>！</code>表示强制执行，例如<code>:q!</code>表示强制退出但不保存。</li></ul><h2 id="命令行模式功能键"><a href="#命令行模式功能键" class="headerlink" title="命令行模式功能键"></a>命令行模式功能键</h2><h3 id="进入插入模式的几种方法。"><a href="#进入插入模式的几种方法。" class="headerlink" title="进入插入模式的几种方法。"></a>进入插入模式的几种方法。</h3><ul><li>按<code>i</code>进入插入模式后，光标当前位置开始输入文件；</li><li>按大写<code>I</code>进入插入模式后，光标所在行开始位置开始输入文件</li><li>按<code>a</code>进入插入模式后，光标所在位置的下一个位置开始输入文字； </li><li>按<code>A</code>进入插入模式后，光标所在行末尾开始输入文字； </li><li>按<code>o</code>进入插入模式后，在当前行下一行插入新的一行，从行首开始输入文字。 </li><li>按<code>O</code>进入插入模式后，在当前行上一行是插入新的一行，从行首开始输入文字。</li></ul><h3 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h3><p>vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母<code>hjkl</code>，分别控制光标左、下、上、右移一格。<br>其他移动光标的功能键</p><ul><li><code>ctrl + b</code>屏幕往“后”移动一页。 </li><li><code>ctrl + f</code>屏幕往“前”移动一页。 </li><li><code>ctrl + u</code>屏幕往“后”移动半页</li><li><code>ctrl + d</code>屏幕往“前”移动半页。</li><li><code>home</code>,<code>^</code>,<code>0</code>移到行首。</li><li><code>end</code>,<code>\$</code>移到行尾</li><li><code>gg</code>移到文件开头。</li><li><code>G</code>移到文件最后。</li><li><code>w</code>光标跳到下个字的开头 </li><li><code>e</code>光标跳到下个字的字尾 </li><li><code>b</code>光标回到上个字的开头 </li><li><code>#l</code>光标移到该行的第#个位置，如：5l,56l。 </li></ul><h3 id="删除文字"><a href="#删除文字" class="headerlink" title="删除文字"></a>删除文字</h3><ul><li><code>x</code>每按一次，删除光标所在位置的“后面”一个字符。 </li><li><code>#x</code>：例如，「6x」表示删除光标所在位置的“后面”6个字符。 </li><li><code>X</code>大写的X，每按一次，删除光标所在位置的“前面”一个字符。 </li><li><code>#X</code>例如，「20X」表示删除光标所在位置的“前面”20个字符。 </li><li><code>dd</code>删除光标所在行。 </li><li><code>#dd</code>从光标所在行开始删除#行 </li></ul><h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><ul><li><code>yw</code>将光标所在之处到字尾的字符复制到缓冲区中。 </li><li><code>#wy</code>复制#个字到缓冲区 </li><li><code>yy</code>复制光标所在行到缓冲区。 </li><li><code>#yy</code>例如，「6yy」表示拷贝从光标所在的该行“往下数”6行文字。 </li><li><code>p</code>将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</li></ul><h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><ul><li><code>r</code>替换光标所在处的字符。 </li><li><code>R</code>替换光标所到之处的字符，直到按下「ESC」键为止。 </li></ul><h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><ul><li><code>u</code>如果您误执行一个命令，可以马上按下<code>u</code>，回到上一个操作。按多次“u”可以执行多次回复。 </li></ul><h3 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h3><ul><li><code>cw</code>更改光标所在处的字到字尾处 </li><li><code>c#w</code>例如,<code>c3w</code>表示更改3个字 </li></ul><h3 id="跳至指定的行"><a href="#跳至指定的行" class="headerlink" title="跳至指定的行"></a>跳至指定的行</h3><ul><li><code>ctrl + g</code>列出光标所在行的行号。 </li><li><code>#G</code>例如，<code>10G</code>，表示移动光标至文章的第15行行首。 </li></ul><h2 id="底行模式下命令简介"><a href="#底行模式下命令简介" class="headerlink" title="底行模式下命令简介"></a>底行模式下命令简介</h2><p>　　在使用底行模式之前，请记住先按「ESC」键确定您已经处于命令行模式下后，再按<code>:</code>冒号即可进入底行模式。 </p><h3 id="列出行号"><a href="#列出行号" class="headerlink" title="列出行号"></a>列出行号</h3><ul><li><code>set nu</code>输入<code>set nu</code>后，会在文件中的每一行前面列出行号。 </li></ul><h3 id="跳到文件中的某一行"><a href="#跳到文件中的某一行" class="headerlink" title="跳到文件中的某一行"></a>跳到文件中的某一行</h3><ul><li><code>#</code>号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。 </li></ul><h3 id="查找字符"><a href="#查找字符" class="headerlink" title="查找字符"></a>查找字符</h3><ul><li><code>/关键字</code>先按<code>/</code>键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按<code>n</code>会往后寻找到您要的关键字为止。 </li><li><code>?关键字</code>先按<code>?</code>键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按<code>n</code>会往前寻找到您要的关键字为止。 </li></ul><h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><ul><li><code>w</code>在冒号输入字母<code>w</code>就可以将文件保存起来。 </li></ul><h3 id="离开vi"><a href="#离开vi" class="headerlink" title="离开vi"></a>离开vi</h3><ul><li><code>q</code>按「q」就是退出，如果无法离开vi，可以在<code>q</code>跟一个<code>!</code>强制离开vi。 </li><li><code>qw</code>一般建议离开时，搭配<code>w</code>一起使用，这样在退出的时候还可以保存文件。 </li></ul>]]></content>
     
@@ -99,26 +37,6 @@
     
     
       <category term="每天学点儿linux" scheme="https://renguangli.com/tags/%E6%AF%8F%E5%A4%A9%E5%AD%A6%E7%82%B9%E5%84%BFlinux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字节码指令集</title>
-    <link href="https://renguangli.com/article/class.html"/>
-    <id>https://renguangli.com/article/class.html</id>
-    <published>2018-05-03T10:12:33.000Z</published>
-    <updated>2018-06-15T16:37:44.504Z</updated>
-    
-    <content type="html"><![CDATA[<p>以下为字节码指令集，方便查看<br>nop 什么都不做<br>aconst_null 将null推送至栈顶<br>iconst_m1 将int型-1推送至栈顶<br>iconst_0 将int型0推送至栈顶<br><a id="more"></a><br>iconst_1 将int型1推送至栈顶<br>iconst_2 将int型2推送至栈顶<br>iconst_3 将int型3推送至栈顶<br>iconst_4 将int型4推送至栈顶<br>iconst_5 将int型5推送至栈顶<br>lconst_0 将long型0推送至栈顶<br>lconst_1 将long型1推送至栈顶<br>fconst_0 将float型0推送至栈顶<br>fconst_1 将float型1推送至栈顶<br>fconst_2 将float型2推送至栈顶<br>dconst_0 将do le型0推送至栈顶<br>dconst_1 将do le型1推送至栈顶<br>bipush 将单字节的常量值(-128~127)推送至栈顶<br>sipush 将一个短整型常量值(-32768~32767)推送至栈顶<br>ldc 将int, float或String型常量值从常量池中推送至栈顶<br>ldc_w 将int, float或String型常量值从常量池中推送至栈顶（宽索引）<br>ldc2_w 将long或do le型常量值从常量池中推送至栈顶（宽索引）<br>iload 将指定的int型本地变量<br>lload 将指定的long型本地变量<br>fload 将指定的float型本地变量<br>dload 将指定的do le型本地变量<br>aload 将指定的引用类型本地变量<br>iload_0 将第一个int型本地变量<br>iload_1 将第二个int型本地变量<br>iload_2 将第三个int型本地变量<br>iload_3 将第四个int型本地变量<br>lload_0 将第一个long型本地变量<br>lload_1 将第二个long型本地变量<br>lload_2 将第三个long型本地变量<br>lload_3 将第四个long型本地变量<br>fload_0 将第一个float型本地变量<br>fload_1 将第二个float型本地变量<br>fload_2 将第三个float型本地变量<br>fload_3 将第四个float型本地变量<br>dload_0 将第一个do le型本地变量<br>dload_1 将第二个do le型本地变量<br>dload_2 将第三个do le型本地变量<br>dload_3 将第四个do le型本地变量<br>aload_0 将第一个引用类型本地变量<br>aload_1 将第二个引用类型本地变量<br>aload_2 将第三个引用类型本地变量<br>aload_3 将第四个引用类型本地变量<br>iaload 将int型数组指定索引的值推送至栈顶<br>laload 将long型数组指定索引的值推送至栈顶<br>faload 将float型数组指定索引的值推送至栈顶<br>daload 将do le型数组指定索引的值推送至栈顶<br>aaload 将引用型数组指定索引的值推送至栈顶<br>baload 将boolean或byte型数组指定索引的值推送至栈顶<br>caload 将char型数组指定索引的值推送至栈顶<br>saload 将short型数组指定索引的值推送至栈顶<br>istore 将栈顶int型数值存入指定本地变量<br>lstore 将栈顶long型数值存入指定本地变量<br>fstore 将栈顶float型数值存入指定本地变量<br>dstore 将栈顶do le型数值存入指定本地变量<br>astore 将栈顶引用型数值存入指定本地变量<br>istore_0 将栈顶int型数值存入第一个本地变量<br>istore_1 将栈顶int型数值存入第二个本地变量<br>istore_2 将栈顶int型数值存入第三个本地变量<br>istore_3 将栈顶int型数值存入第四个本地变量<br>lstore_0 将栈顶long型数值存入第一个本地变量<br>lstore_1 将栈顶long型数值存入第二个本地变量<br>lstore_2 将栈顶long型数值存入第三个本地变量<br>lstore_3 将栈顶long型数值存入第四个本地变量<br>fstore_0 将栈顶float型数值存入第一个本地变量<br>fstore_1 将栈顶float型数值存入第二个本地变量<br>fstore_2 将栈顶float型数值存入第三个本地变量<br>fstore_3 将栈顶float型数值存入第四个本地变量<br>dstore_0 将栈顶do le型数值存入第一个本地变量<br>dstore_1 将栈顶do le型数值存入第二个本地变量<br>dstore_2 将栈顶do le型数值存入第三个本地变量<br>dstore_3 将栈顶do le型数值存入第四个本地变量<br>astore_0 将栈顶引用型数值存入第一个本地变量<br>astore_1 将栈顶引用型数值存入第二个本地变量<br>astore_2 将栈顶引用型数值存入第三个本地变量<br>astore_3 将栈顶引用型数值存入第四个本地变量<br>iastore 将栈顶int型数值存入指定数组的指定索引位置<br>lastore 将栈顶long型数值存入指定数组的指定索引位置<br>fastore 将栈顶float型数值存入指定数组的指定索引位置<br>dastore 将栈顶do le型数值存入指定数组的指定索引位置<br>aastore 将栈顶引用型数值存入指定数组的指定索引位置<br>bastore 将栈顶boolean或byte型数值存入指定数组的指定索引位置<br>castore 将栈顶char型数值存入指定数组的指定索引位置<br>sastore 将栈顶short型数值存入指定数组的指定索引位置<br>pop 将栈顶数值弹出 (数值不能是long或do le类型的)<br>pop2 将栈顶的一个（long或do le类型的)或两个数值弹出（其它）<br>dup 复制栈顶数值并将复制值压入栈顶<br>dup_x1 复制栈顶数值并将两个复制值压入栈顶<br>dup_x2 复制栈顶数值并将三个（或两个）复制值压入栈顶<br>dup2 复制栈顶一个（long或do   le类型的)或两个（其它）数值并将复制值压入栈顶<br>dup2_x1 dup_x1 指令的双倍版本<br>dup2_x2 dup_x2 指令的双倍版本<br>swap 将栈最顶端的两个数值互换(数值不能是long或do le类型的)<br>iadd 将栈顶两int型数值相加并将结果压入栈顶<br>ladd 将栈顶两long型数值相加并将结果压入栈顶<br>fadd 将栈顶两float型数值相加并将结果压入栈顶<br>dadd 将栈顶两do le型数值相加并将结果压入栈顶<br>is 将栈顶两int型数值相减并将结果压入栈顶<br>ls 将栈顶两long型数值相减并将结果压入栈顶<br>fs 将栈顶两float型数值相减并将结果压入栈顶<br>ds 将栈顶两do le型数值相减并将结果压入栈顶<br>imul 将栈顶两int型数值相乘并将结果压入栈顶<br>lmul 将栈顶两long型数值相乘并将结果压入栈顶<br>fmul 将栈顶两float型数值相乘并将结果压入栈顶<br>dmul 将栈顶两do le型数值相乘并将结果压入栈顶<br>idiv 将栈顶两int型数值相除并将结果压入栈顶<br>ldiv 将栈顶两long型数值相除并将结果压入栈顶<br>fdiv 将栈顶两float型数值相除并将结果压入栈顶<br>ddiv 将栈顶两do le型数值相除并将结果压入栈顶<br>irem 将栈顶两int型数值作取模运算并将结果压入栈顶<br>lrem 将栈顶两long型数值作取模运算并将结果压入栈顶<br>frem 将栈顶两float型数值作取模运算并将结果压入栈顶<br>drem 将栈顶两do le型数值作取模运算并将结果压入栈顶<br>ineg 将栈顶int型数值取负并将结果压入栈顶<br>lneg 将栈顶long型数值取负并将结果压入栈顶<br>fneg 将栈顶float型数值取负并将结果压入栈顶<br>dneg 将栈顶do le型数值取负并将结果压入栈顶<br>ishl 将int型数值左移位指定位数并将结果压入栈顶<br>lshl 将long型数值左移位指定位数并将结果压入栈顶<br>ishr 将int型数值右（符号）移位指定位数并将结果压入栈顶<br>lshr 将long型数值右（符号）移位指定位数并将结果压入栈顶<br>iushr 将int型数值右（无符号）移位指定位数并将结果压入栈顶<br>lushr 将long型数值右（无符号）移位指定位数并将结果压入栈顶<br>iand 将栈顶两int型数值作“按位与”并将结果压入栈顶<br>land 将栈顶两long型数值作“按位与”并将结果压入栈顶<br>ior 将栈顶两int型数值作“按位或”并将结果压入栈顶<br>lor 将栈顶两long型数值作“按位或”并将结果压入栈顶<br>ixor 将栈顶两int型数值作“按位异或”并将结果压入栈顶<br>lxor 将栈顶两long型数值作“按位异或”并将结果压入栈顶<br>iinc 将指定int型变量增加指定值（i++, i–, i+=2）<br>i2l 将栈顶int型数值强制转换成long型数值并将结果压入栈顶<br>i2f 将栈顶int型数值强制转换成float型数值并将结果压入栈顶<br>i2d 将栈顶int型数值强制转换成do le型数值并将结果压入栈顶<br>l2i 将栈顶long型数值强制转换成int型数值并将结果压入栈顶<br>l2f 将栈顶long型数值强制转换成float型数值并将结果压入栈顶<br>l2d 将栈顶long型数值强制转换成do le型数值并将结果压入栈顶<br>f2i 将栈顶float型数值强制转换成int型数值并将结果压入栈顶<br>f2l 将栈顶float型数值强制转换成long型数值并将结果压入栈顶<br>f2d 将栈顶float型数值强制转换成do le型数值并将结果压入栈顶<br>d2i 将栈顶do le型数值强制转换成int型数值并将结果压入栈顶<br>d2l 将栈顶do le型数值强制转换成long型数值并将结果压入栈顶<br>d2f 将栈顶do le型数值强制转换成float型数值并将结果压入栈顶<br>i2b 将栈顶int型数值强制转换成byte型数值并将结果压入栈顶<br>i2c 将栈顶int型数值强制转换成char型数值并将结果压入栈顶<br>i2s 将栈顶int型数值强制转换成short型数值并将结果压入栈顶<br>lcmp 比较栈顶两long型数值大小，并将结果（1，0，-1）压入栈顶<br>fcmpl 比较栈顶两float型数值大小，并将结果（1，0，-1）压入栈顶；当其中一个数值为NaN时，将-1压入栈顶<br>fcmpg 比较栈顶两float型数值大小，并将结果（1，0，-1）压入栈顶；当其中一个数值为NaN时，将1压入栈顶<br>dcmpl 比较栈顶两do   le型数值大小，并将结果（1，0，-1）压入栈顶；当其中一个数值为NaN时，将-1压入栈顶<br>dcmpg 比较栈顶两do le型数值大小，并将结果（1，0，-1）压入栈顶；当其中一个数值为NaN时，将1压入栈顶<br>ifeq 当栈顶int型数值等于0时跳转<br>ifne 当栈顶int型数值不等于0时跳转<br>iflt 当栈顶int型数值小于0时跳转<br>ifge 当栈顶int型数值大于等于0时跳转<br>ifgt 当栈顶int型数值大于0时跳转<br>ifle 当栈顶int型数值小于等于0时跳转<br>if_icmpeq 比较栈顶两int型数值大小，当结果等于0时跳转<br>if_icmpne 比较栈顶两int型数值大小，当结果不等于0时跳转<br>if_icmplt 比较栈顶两int型数值大小，当结果小于0时跳转<br>if_icmpge 比较栈顶两int型数值大小，当结果大于等于0时跳转<br>if_icmpgt 比较栈顶两int型数值大小，当结果大于0时跳转<br>if_icmple 比较栈顶两int型数值大小，当结果小于等于0时跳转<br>if_acmpeq 比较栈顶两引用型数值，当结果相等时跳转<br>if_acmpne 比较栈顶两引用型数值，当结果不相等时跳转<br>goto 无条件跳转<br>jsr 跳转至指定16位offset位置，并将jsr下一条指令地址压入栈顶<br>ret 返回至本地变量<br>tableswitch 用于switch条件跳转，case值连续（可变长度指令）<br>lookupswitch 用于switch条件跳转，case值不连续（可变长度指令<br>ireturn 从当前方法返回int<br>lreturn 从当前方法返回long<br>freturn 从当前方法返回float<br>dreturn 从当前方法返回do le<br>areturn 从当前方法返回对象引用<br>return 从当前方法返回void<br>getstatic 获取指定类的静态域，并将其值压入栈顶<br>putstatic 为指定的类的静态域赋值<br>getfield 获取指定类的实例域，并将其值压入栈顶<br>putfield 为指定的类的实例域赋值<br>invokevirtual 调用实例方法<br>invokespecial 调用超类构造方法，实例初始化方法，私有方法<br>invokestatic 调用静态方法<br>invokeinterface 调用接口方法<br>– 无此指令<br>new 创建一个对象，并将其引用值压入栈顶<br>newarray 创建一个指定原始类型（如int, float,   char…）的数组，并将其引用值压入栈顶<br>anewarray 创建一个引用型（如类，接口，数组）的数组，并将其引用值压入栈顶<br>arraylength 获得数组的长度值并压入栈顶<br>athrow 将栈顶的异常抛出<br>checkcast 检验类型转换，检验未通过将抛出ClassCastException<br>instanceof 检验对象是否是指定的类的实例，如果是将1压入栈顶，否则将0压入栈顶<br>monitorenter 获得对象的锁，用于同步方法或同步块<br>monitorexit 释放对象的锁，用于同步方法或同步块<br>wide &lt;待补充&gt;<br>multianewarray 创建指定类型和指定维度的多维数组（执行该指令时，操作栈中必须包含各维度的长度值），并将其引用值压入栈顶<br>ifnull 为null时跳转<br>ifnonnull 不为null时跳转<br>goto_w 无条件跳转（宽索引）<br>jsr_w 跳转至指定32位offset位置，并将jsr_w下一条指令地址压入栈顶</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;以下为字节码指令集，方便查看&lt;br&gt;nop 什么都不做&lt;br&gt;aconst_null 将null推送至栈顶&lt;br&gt;iconst_m1 将int型-1推送至栈顶&lt;br&gt;iconst_0 将int型0推送至栈顶&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://renguangli.com/tags/java/"/>
     
   </entry>
   
