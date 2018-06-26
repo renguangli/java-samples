@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="docker入门之简介"/>
+  <meta name="description" content="每天学点儿linux--vi编辑器的使用"/>
 
 
 
 
-  <meta name="keywords" content="docker, Dali`s Blogs" />
+  <meta name="keywords" content="每天学点儿linux, Dali`s Blogs" />
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="https://renguangli.com/article/docker-summary.html"/>
+<link rel="canonical" href="https://renguangli.com/article/linux-vi.html"/>
 
 
 
@@ -117,7 +117,7 @@
   window.config = {"title":"Dali`s Blogs","subtitle":"大力的技术博客","description":null,"author":"大力","language":"zh-CN","timezone":null,"url":"https://renguangli.com","root":"/","permalink":"article/:uuid.html","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":[{"type":"git","repo":"git@github.com:renguangli/renguangli.github.io.git"},{"type":"git","repo":"git@gitlab.com:renguangli/renguangli.gitlab.io.git"},{"type":"git","repo":"git@git.coding.net:renguangli/renguangli.coding.me.git"}],"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2016,"favicon":"/favicon.ico","rss":"/atom.xml","menu":{"home":"/","archives":"/archives/","tags":"/tags","about":"/about","rss":"/atom.xml"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"商业转载请联系作者获得授权,非商业转载请注明出处 © <a href=\"https://github.com/renguangli\" target=\"_blank\">dali</a>"},"reward":{"enable":true,"qrCode":{"wechat":"/images/wechat.jpg","alipay":"/images/alipay.jpg"}},"social":{"email":"211887977@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/renguangli","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"wOPUuQqvjzrhY0XY9f1n9j00-gzGzoHsz","app_key":"obqMrXoNTILoEImTwDxuVbnJ"},"baidu_analytics":"ba063f35168779a257f7e62f7b801df1","baidu_verification":null,"google_analytics":"UA-106555827-1","google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":"MTAyMC8zMzA1MS85NjEz","version":"2.9.0"};
 </script>
 
-    <title> docker入门之简介 - Dali`s Blogs </title>
+    <title> 每天学点儿linux--vi编辑器的使用 - Dali`s Blogs </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -251,21 +251,21 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          docker入门之简介
+          每天学点儿linux--vi编辑器的使用
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
           发布于
-          2017-09-10
+          2016-08-15
         </span>
         
         
 
         <div class="post-visits"
-             data-url="/article/docker-summary.html"
-             data-title="docker入门之简介">
+             data-url="/article/linux-vi.html"
+             data-title="每天学点儿linux--vi编辑器的使用">
             阅读次数 0 次
           </div>
         
@@ -306,7 +306,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是docker"><span class="toc-text">什么是docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要用docker"><span class="toc-text">为什么要用docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更高效的利用系统资源"><span class="toc-text">更高效的利用系统资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更快速的启动时间"><span class="toc-text">更快速的启动时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一致的运行环境"><span class="toc-text">一致的运行环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#持续交付和部署"><span class="toc-text">持续交付和部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更轻松的迁移"><span class="toc-text">更轻松的迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更轻松的维护和扩展"><span class="toc-text">更轻松的维护和扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对比传统虚拟机总结"><span class="toc-text">对比传统虚拟机总结</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本使用"><span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行模式功能键"><span class="toc-text">命令行模式功能键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入插入模式的几种方法。"><span class="toc-text">进入插入模式的几种方法。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动光标"><span class="toc-text">移动光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除文字"><span class="toc-text">删除文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制"><span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换"><span class="toc-text">替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改"><span class="toc-text">更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跳至指定的行"><span class="toc-text">跳至指定的行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#底行模式下命令简介"><span class="toc-text">底行模式下命令简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列出行号"><span class="toc-text">列出行号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跳到文件中的某一行"><span class="toc-text">跳到文件中的某一行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找字符"><span class="toc-text">查找字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存文件"><span class="toc-text">保存文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#离开vi"><span class="toc-text">离开vi</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -314,56 +314,91 @@
 
     <div class="post-content">
       
-        <h2 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h2><ul>
-<li>docker是一个开源的应用容器引擎;</li>
-<li>docker是一个开源的软件部署解决方案；</li>
-<li>docker也是轻量级的应用容器框架；</li>
-<li>docker可以打包、发布、运行任何的应用。</li>
+        <p>vi编辑器是Linux系统下标准的编辑器，一般linux都没有桌面环境，平常修改一些配置文件，编写脚本对于vi编辑器来说都很方便，所以我们有必要学会并熟练使用它。<br>vi编辑器可以分为三种状态，分别是命令模式、插入模式和底行模式  </p>
+<ul>
+<li>命令行模式：控制屏幕光标的移动、字符、字或行的删除，移动复制某区段及进入插入模式下，或者到底行模式。   </li>
+<li>插入模式：只有在插入模式下，才可以做文字输入，按「ESC」键可回到命令行模式。</li>
+<li>底行模式：将文件保存或退出vi，也可以设置编辑环境，如寻找字符串、列出行号……等。 <a id="more"></a>
+下面列举一些常用命令和技巧</li>
 </ul>
-<a id="more"></a>
-<p>下面的图片比较了 docker 和传统虚拟化方式的不同之处。传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。</p>
-<p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/docker/docker.png" alt="虚拟机"><br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/docker/virtualization.png" alt="dcoker"></p>
-<h2 id="为什么要用docker"><a href="#为什么要用docker" class="headerlink" title="为什么要用docker"></a>为什么要用docker</h2><p>作为一种新兴的虚拟化方式，docker 跟传统的虚拟化方式相比具有众多的优势。</p>
-<h3 id="更高效的利用系统资源"><a href="#更高效的利用系统资源" class="headerlink" title="更高效的利用系统资源"></a>更高效的利用系统资源</h3><p>由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，docker 对系统资源的利用率更高。无论是应用执行速度、内存损耗或者文件存储速度，都要比传统虚拟机技术更高效。因此，相比虚拟机技术，一个相同配置的主机，往往可以运行更多数量的应用。</p>
-<h3 id="更快速的启动时间"><a href="#更快速的启动时间" class="headerlink" title="更快速的启动时间"></a>更快速的启动时间</h3><p>传统的虚拟机技术启动应用服务往往需要数分钟，而 docker 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。大大的节约了开发、测试、部署的时间。</p>
-<h3 id="一致的运行环境"><a href="#一致的运行环境" class="headerlink" title="一致的运行环境"></a>一致的运行环境</h3><p>开发过程中一个常见的问题是环境一致性问题。由于开发环境、测试环境、生产环境不一致，导致有些 bug 并未在开发过程中被发现。而 docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性，从而不会再出现 「这段代码在我机器上没问题啊」 这类问题。</p>
-<h3 id="持续交付和部署"><a href="#持续交付和部署" class="headerlink" title="持续交付和部署"></a>持续交付和部署</h3><p>对开发和运维（DevOps）人员来说，最希望的就是一次创建或配置，可以在任意地方正常运行。<br>使用 docker 可以通过定制应用镜像来实现持续集成、持续交付、部署。开发人员可以通过 dockerfile 来进行镜像构建，并结合 持续集成(Continuous Integration) 系统进行集成测试，而运维人员则可以直接在生产环境中快速部署该镜像，甚至结合 持续部署(Continuous Delivery/Deployment) 系统进行自动部署。<br>而且使用 dockerfile 使镜像构建透明化，不仅仅开发团队可以理解应用运行环境，也方便运维团队理解应用运行所需条件，帮助更好的生产环境中部署该镜像。</p>
-<h3 id="更轻松的迁移"><a href="#更轻松的迁移" class="headerlink" title="更轻松的迁移"></a>更轻松的迁移</h3><p>由于 docker 确保了执行环境的一致性，使得应用的迁移更加容易。docker 可以在很多平台上运行，无论是物理机、虚拟机、公有云、私有云，甚至是笔记本，其运行结果是一致的。因此用户可以很轻易的将在一个平台上运行的应用，迁移到另一个平台上，而不用担心运行环境的变化导致应用无法正常运行的情况。</p>
-<h3 id="更轻松的维护和扩展"><a href="#更轻松的维护和扩展" class="headerlink" title="更轻松的维护和扩展"></a>更轻松的维护和扩展</h3><p>docker 使用的分层存储以及镜像的技术，使得应用重复部分的复用更为容易，也使得应用的维护更新更加简单，基于基础镜像进一步扩展镜像也变得非常简单。此外，docker 团队同各个开源项目团队一起维护了一大批高质量的官方镜像，既可以直接在生产环境使用，又可以作为基础进一步定制，大大的降低了应用服务的镜像制作成本。</p>
-<h3 id="对比传统虚拟机总结"><a href="#对比传统虚拟机总结" class="headerlink" title="对比传统虚拟机总结"></a>对比传统虚拟机总结</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">特性</th>
-<th style="text-align:center">容器</th>
-<th style="text-align:center">虚拟机</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">启动</td>
-<td style="text-align:center">秒级</td>
-<td style="text-align:center">分钟级</td>
-</tr>
-<tr>
-<td style="text-align:center">硬盘使用</td>
-<td style="text-align:center">一般为 MB</td>
-<td style="text-align:center">一般为 GB</td>
-</tr>
-<tr>
-<td style="text-align:center">性能</td>
-<td style="text-align:center">接近原生</td>
-<td style="text-align:center">弱于</td>
-</tr>
-<tr>
-<td style="text-align:center">系统支持量</td>
-<td style="text-align:center">单机支持上千个容器</td>
-<td style="text-align:center">一般几十个</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/Docker/13344470?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
-</blockquote>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>我们如何进入vi编辑器呢？<br>输入<code>vi fileName</code>命令进入vi编辑器，这时处于命令行模式。<br>在命令模式下按下<code>i</code>字母就会进入插入模式，这时就可以对对文件进行编辑了。<br>那我们如何退出vi编辑器呢？<br>在命令行模式下，按一下 <code>:</code>冒号键进入底行模式</p>
+<ul>
+<li><code>:w</code>保存但不退出。</li>
+<li><code>:w fileName</code>文件另存为filename。</li>
+<li><code>:wq</code>保存并退出。</li>
+<li><code>:q</code>退出但不保存。<br>在末尾加入<code>！</code>表示强制执行，例如<code>:q!</code>表示强制退出但不保存。</li>
+</ul>
+<h2 id="命令行模式功能键"><a href="#命令行模式功能键" class="headerlink" title="命令行模式功能键"></a>命令行模式功能键</h2><h3 id="进入插入模式的几种方法。"><a href="#进入插入模式的几种方法。" class="headerlink" title="进入插入模式的几种方法。"></a>进入插入模式的几种方法。</h3><ul>
+<li>按<code>i</code>进入插入模式后，光标当前位置开始输入文件；</li>
+<li>按大写<code>I</code>进入插入模式后，光标所在行开始位置开始输入文件</li>
+<li>按<code>a</code>进入插入模式后，光标所在位置的下一个位置开始输入文字； </li>
+<li>按<code>A</code>进入插入模式后，光标所在行末尾开始输入文字； </li>
+<li>按<code>o</code>进入插入模式后，在当前行下一行插入新的一行，从行首开始输入文字。 </li>
+<li>按<code>O</code>进入插入模式后，在当前行上一行是插入新的一行，从行首开始输入文字。</li>
+</ul>
+<h3 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h3><p>vi可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母<code>hjkl</code>，分别控制光标左、下、上、右移一格。<br>其他移动光标的功能键</p>
+<ul>
+<li><code>ctrl + b</code>屏幕往“后”移动一页。 </li>
+<li><code>ctrl + f</code>屏幕往“前”移动一页。 </li>
+<li><code>ctrl + u</code>屏幕往“后”移动半页</li>
+<li><code>ctrl + d</code>屏幕往“前”移动半页。</li>
+<li><code>home</code>,<code>^</code>,<code>0</code>移到行首。</li>
+<li><code>end</code>,<code>\$</code>移到行尾</li>
+<li><code>gg</code>移到文件开头。</li>
+<li><code>G</code>移到文件最后。</li>
+<li><code>w</code>光标跳到下个字的开头 </li>
+<li><code>e</code>光标跳到下个字的字尾 </li>
+<li><code>b</code>光标回到上个字的开头 </li>
+<li><code>#l</code>光标移到该行的第#个位置，如：5l,56l。 </li>
+</ul>
+<h3 id="删除文字"><a href="#删除文字" class="headerlink" title="删除文字"></a>删除文字</h3><ul>
+<li><code>x</code>每按一次，删除光标所在位置的“后面”一个字符。 </li>
+<li><code>#x</code>：例如，「6x」表示删除光标所在位置的“后面”6个字符。 </li>
+<li><code>X</code>大写的X，每按一次，删除光标所在位置的“前面”一个字符。 </li>
+<li><code>#X</code>例如，「20X」表示删除光标所在位置的“前面”20个字符。 </li>
+<li><code>dd</code>删除光标所在行。 </li>
+<li><code>#dd</code>从光标所在行开始删除#行 </li>
+</ul>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><ul>
+<li><code>yw</code>将光标所在之处到字尾的字符复制到缓冲区中。 </li>
+<li><code>#wy</code>复制#个字到缓冲区 </li>
+<li><code>yy</code>复制光标所在行到缓冲区。 </li>
+<li><code>#yy</code>例如，「6yy」表示拷贝从光标所在的该行“往下数”6行文字。 </li>
+<li><code>p</code>将缓冲区内的字符贴到光标所在位置。注意：所有与“y”有关的复制命令都必须与“p”配合才能完成复制与粘贴功能。</li>
+</ul>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><ul>
+<li><code>r</code>替换光标所在处的字符。 </li>
+<li><code>R</code>替换光标所到之处的字符，直到按下「ESC」键为止。 </li>
+</ul>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><ul>
+<li><code>u</code>如果您误执行一个命令，可以马上按下<code>u</code>，回到上一个操作。按多次“u”可以执行多次回复。 </li>
+</ul>
+<h3 id="更改"><a href="#更改" class="headerlink" title="更改"></a>更改</h3><ul>
+<li><code>cw</code>更改光标所在处的字到字尾处 </li>
+<li><code>c#w</code>例如,<code>c3w</code>表示更改3个字 </li>
+</ul>
+<h3 id="跳至指定的行"><a href="#跳至指定的行" class="headerlink" title="跳至指定的行"></a>跳至指定的行</h3><ul>
+<li><code>ctrl + g</code>列出光标所在行的行号。 </li>
+<li><code>#G</code>例如，<code>10G</code>，表示移动光标至文章的第15行行首。 </li>
+</ul>
+<h2 id="底行模式下命令简介"><a href="#底行模式下命令简介" class="headerlink" title="底行模式下命令简介"></a>底行模式下命令简介</h2><p>　　在使用底行模式之前，请记住先按「ESC」键确定您已经处于命令行模式下后，再按<code>:</code>冒号即可进入底行模式。 </p>
+<h3 id="列出行号"><a href="#列出行号" class="headerlink" title="列出行号"></a>列出行号</h3><ul>
+<li><code>set nu</code>输入<code>set nu</code>后，会在文件中的每一行前面列出行号。 </li>
+</ul>
+<h3 id="跳到文件中的某一行"><a href="#跳到文件中的某一行" class="headerlink" title="跳到文件中的某一行"></a>跳到文件中的某一行</h3><ul>
+<li><code>#</code>号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。 </li>
+</ul>
+<h3 id="查找字符"><a href="#查找字符" class="headerlink" title="查找字符"></a>查找字符</h3><ul>
+<li><code>/关键字</code>先按<code>/</code>键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按<code>n</code>会往后寻找到您要的关键字为止。 </li>
+<li><code>?关键字</code>先按<code>?</code>键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按<code>n</code>会往前寻找到您要的关键字为止。 </li>
+</ul>
+<h3 id="保存文件"><a href="#保存文件" class="headerlink" title="保存文件"></a>保存文件</h3><ul>
+<li><code>w</code>在冒号输入字母<code>w</code>就可以将文件保存起来。 </li>
+</ul>
+<h3 id="离开vi"><a href="#离开vi" class="headerlink" title="离开vi"></a>离开vi</h3><ul>
+<li><code>q</code>按「q」就是退出，如果无法离开vi，可以在<code>q</code>跟一个<code>!</code>强制离开vi。 </li>
+<li><code>qw</code>一般建议离开时，搭配<code>w</code>一起使用，这样在退出的时候还可以保存文件。 </li>
+</ul>
 
       
     </div>
@@ -384,7 +419,7 @@
     </p>
 <!--      <p class="copyright-item">
  <span>原文链接: </span>
- <a href="https://renguangli.com/article/docker-summary.html">https://renguangli.com/article/docker-summary.html</a>
+ <a href="https://renguangli.com/article/linux-vi.html">https://renguangli.com/article/linux-vi.html</a>
     </p> -->
   </div>
 
@@ -417,7 +452,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/docker/">docker</a>
+              <a href="/tags/每天学点儿linux/">每天学点儿linux</a>
             
           </div>
         
@@ -425,18 +460,12 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/article/docker-deploy.html">
+      <a class="prev" href="/article/hexo.html">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">docker入门之安装</span>
+        <span class="prev-text nav-default">hexo之博客搭建</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
-    
-      <a class="next" href="/article/hexo.html">
-        <span class="next-text nav-default">hexo之博客搭建</span>
-        <span class="prev-text nav-mobile">下一篇</span>
-        <i class="iconfont icon-right"></i>
-      </a>
     
   </nav>
 

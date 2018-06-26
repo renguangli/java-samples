@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="java8之java.lang.Object源码阅读"/>
 
 
+
+
+  <meta name="keywords" content="java, Dali`s Blogs" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="https://renguangli.com/"/>
+<link rel="canonical" href="https://renguangli.com/article/java8-Object.html"/>
 
 
 
@@ -113,7 +117,7 @@
   window.config = {"title":"Dali`s Blogs","subtitle":"大力的技术博客","description":null,"author":"大力","language":"zh-CN","timezone":null,"url":"https://renguangli.com","root":"/","permalink":"article/:uuid.html","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"even","deploy":[{"type":"git","repo":"git@github.com:renguangli/renguangli.github.io.git"},{"type":"git","repo":"git@gitlab.com:renguangli/renguangli.gitlab.io.git"},{"type":"git","repo":"git@git.coding.net:renguangli/renguangli.coding.me.git"}],"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":10,"yearly":true,"monthly":true,"daily":false},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"category_generator":{"per_page":10},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2016,"favicon":"/favicon.ico","rss":"/atom.xml","menu":{"home":"/","archives":"/archives/","tags":"/tags","about":"/about","rss":"/atom.xml"},"color":"Default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"商业转载请联系作者获得授权,非商业转载请注明出处 © <a href=\"https://github.com/renguangli\" target=\"_blank\">dali</a>"},"reward":{"enable":true,"qrCode":{"wechat":"/images/wechat.jpg","alipay":"/images/alipay.jpg"}},"social":{"email":"211887977@qq.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/renguangli","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"wOPUuQqvjzrhY0XY9f1n9j00-gzGzoHsz","app_key":"obqMrXoNTILoEImTwDxuVbnJ"},"baidu_analytics":"ba063f35168779a257f7e62f7b801df1","baidu_verification":null,"google_analytics":"UA-106555827-1","google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":"MTAyMC8zMzA1MS85NjEz","version":"2.9.0"};
 </script>
 
-    <title> Dali`s Blogs </title>
+    <title> java8之java.lang.Object源码阅读 - Dali`s Blogs </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -242,63 +246,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/article/java8-String.html">java8之java.lang.String源码阅读</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2018-06-26
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/java8-String.html"
-             data-title="java8之java.lang.String源码阅读">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/java8-Object.html">java8之java.lang.Object源码阅读</a>
+          java8之java.lang.Object源码阅读
         
       </h1>
 
@@ -318,481 +271,153 @@
         
       </div>
        
+      <div class="bdsharebuttonbox">
+          <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+          <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+          <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+          <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+          <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+          <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+          <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+          <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+          <a href="javascript:;" class="bds_more" data-cmd="more"></a>
+      </div>
+      <script>
+          window._bd_share_config = {
+              "common": {
+                  "bdSnsKey": {},
+                  "bdText": "",
+                  "bdMini": "2",
+                  "bdMiniList": false,
+                  "bdPic": "",
+                  "bdStyle": "0",
+                  "bdSize": "24"
+              },
+              "share": {},
+              "image": {"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "16"}
+          };
+      </script>
+      <script type="text/javascript" src="/static/api/js/share.js"></script>
+      
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#clone"><span class="toc-text">clone()</span></a></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        
-        
-          
-        
+        <p>Object作为所有类的父类，还是有必要研究一下的。<a id="more"></a><br>Object类一共有以下几个方法<br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png" alt="image"><br>下面我们一个一个来看。</p>
+<h2 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h2><p>clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。</p>
+<p>大家来看下面一个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义一个User类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">    Node node;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> age, Node node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.node = node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;age="</span> + age + <span class="string">",node="</span> + node.name + <span class="string">"&#125;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> User <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (User) <span class="keyword">super</span>.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    User user1 = <span class="keyword">new</span> User(<span class="keyword">new</span> Node(<span class="string">"张三"</span>), <span class="number">18</span>);</span><br><span class="line">    User user2 = user1.clone();</span><br><span class="line">    user2.node.name = <span class="string">"李四"</span>;</span><br><span class="line">    System.out.println(user1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印结果</p>
+<blockquote>
+<p>User{age=18,node=李四}</p>
+</blockquote>
+<p>看最后一行输出，当我们改变user2的node属性时，user1的node属性也改变了，说明clone方法只是拷贝了node属性的引用，实际上user1、user2的node属性指向的是堆内存中的同一个对象。</p>
 
-        
-          <p>Object作为所有类的父类，还是有必要研究一下的。
-      <!--     <div class="read-more">
-        <a href="/article/java8-Object.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/jdk-jre-jvm.html">什么是JDK、JRE、JVM？</a>
-        
-      </h1>
+      
 
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2018-06-14
-        </span>
-        
-        
+  <div class="post-copyright">
+<!--     <p class="copyright-item">
+  <span>原文作者: </span>
+  <a href="https://renguangli.com">大力</a>
+</p> -->
+    <p class="copyright-item">
+      <span>转载声明: </span>
+      
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/renguangli" target="_blank">dali</a>
+    </p>
+<!--      <p class="copyright-item">
+ <span>原文链接: </span>
+ <a href="https://renguangli.com/article/java8-Object.html">https://renguangli.com/article/java8-Object.html</a>
+    </p> -->
+  </div>
 
-        <div class="post-visits"
-             data-url="/article/jdk-jre-jvm.html"
-             data-title="什么是JDK、JRE、JVM？">
-            阅读次数 0 次
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/images/wechat.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/images/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/java/">java</a>
+            
           </div>
         
-      </div>
-       
-    </header>
-
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/article/java8-String.html">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">java8之java.lang.String源码阅读</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>下面贴一张图来看看他们之间的关系</p>
-<p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png" alt="JDK.JRE.JVM"><br>
-      <!--     <div class="read-more">
-        <a href="/article/jdk-jre-jvm.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/nginx-yum.html">每天学点儿linux--centos配置nginx-yum源</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2018-05-21
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/nginx-yum.html"
-             data-title="每天学点儿linux--centos配置nginx-yum源">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>创建/etc/yum.repos.d/nginx.repo文件，并添加一下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo</span><br><span class="line">baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>
-      <!--     <div class="read-more">
-        <a href="/article/nginx-yum.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/centos-open-port.html">每天学点儿linux--centos7开放端口号</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2018-05-15
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/centos-open-port.html"
-             data-title="每天学点儿linux--centos7开放端口号">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>开放80端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure></p>
-      <!--     <div class="read-more">
-        <a href="/article/centos-open-port.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/class.html">字节码指令集</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2018-05-03
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/class.html"
-             data-title="字节码指令集">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>以下为字节码指令集，方便查看<br>nop 什么都不做<br>aconst_null 将null推送至栈顶<br>iconst_m1 将int型-1推送至栈顶<br>iconst_0 将int型0推送至栈顶<br>
-      <!--     <div class="read-more">
-        <a href="/article/class.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/88387b60-70b3-11e8-a0c3-3d78ce8af5d4.html">docker入门之镜像仓库</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2017-11-02
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/88387b60-70b3-11e8-a0c3-3d78ce8af5d4.html"
-             data-title="docker入门之镜像仓库">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/dockerfile.html">docker入门之Dockerfile</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2017-10-31
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/dockerfile.html"
-             data-title="docker入门之Dockerfile">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。<br>
-      <!--     <div class="read-more">
-        <a href="/article/dockerfile.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/docker-container.html">docker入门之容器</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2017-09-15
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/docker-container.html"
-             data-title="docker入门之容器">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>容器是docker的另一个核心概念，简单来说容器就是镜像的一个运行示例。<br>
-      <!--     <div class="read-more">
-        <a href="/article/docker-container.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/article/docker-image.html">docker入门之镜像</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          发布于
-          2017-09-13
-        </span>
-        
-        
-
-        <div class="post-visits"
-             data-url="/article/docker-image.html"
-             data-title="docker入门之镜像">
-            阅读次数 0 次
-          </div>
-        
-      </div>
-       
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。
-      <!--     <div class="read-more">
-        <a href="/article/docker-image.html" class="read-more-link">阅读更多</a>
-      </div> -->
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+      <a class="next" href="/article/jdk-jre-jvm.html">
+        <span class="next-text nav-default">什么是JDK、JRE、JVM？</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA1MS85NjEz">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    
+  </div>
+
 
         </div>
       </main>
@@ -888,6 +513,25 @@
     </div>
 
     
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
 
 
     
