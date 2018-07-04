@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://renguangli.com/"/>
-  <updated>2018-06-26T11:19:25.050Z</updated>
+  <updated>2018-07-04T02:16:33.552Z</updated>
   <id>https://renguangli.com/</id>
   
   <author>
@@ -17,27 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>java8之java.lang.String源码阅读</title>
-    <link href="https://renguangli.com/article/java8-String.html"/>
-    <id>https://renguangli.com/article/java8-String.html</id>
-    <published>2018-06-26T11:16:26.000Z</published>
-    <updated>2018-06-26T11:19:25.050Z</updated>
+    <title>elasticsearch基础概念</title>
+    <link href="https://renguangli.com/article/elasticsearch-base-concepts.html"/>
+    <id>https://renguangli.com/article/elasticsearch-base-concepts.html</id>
+    <published>2018-07-04T02:01:40.000Z</published>
+    <updated>2018-07-04T02:16:33.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>Elasticsearch是一个近乎实时的搜索平台<br><a id="more"></a></p><h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><p>群集是一个或多个节点（服务器）的集合，它们一起保存整个数据，并提供跨所有节点的联合索引和搜索功能。集群由默认名称为“elasticsearch”的唯一名称标识。此名称很重要，因为如果节点设置为通过名称加入群集，则节点只能成为群集的一部分。</p><p>确保不要在不同的环境中重复使用相同的群集名称，否则可能会导致节点加入错误的群集。例如，您可以使用logging-dev，logging-stage和logging-prod开发，分段和生产集群。</p><p>请注意，有一个只有一个节点的集群是完全正确的。此外，您还可能拥有多个独立的群集，每个群集都有自己的唯一群集名称。</p><h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><p>节点是属于集群一部分的单个服务器，存储数据并参与集群的索引和搜索功能。就像一个集群一样，一个节点由一个名称来标识，默认情况下该名称是在启动时分配给节点的随机通用唯一标识符（UUID）。如果您不需要默认值，您可以定义任何您想要的节点名称。此名称对于管理目的非常重要，您可以在其中识别网络中哪些服务器与Elasticsearch集群中的哪些节点相对应。</p><p>可以将节点配置为按集群名称加入特定集群。默认情况下，每个节点都设置为加入名为elasticsearch的集群，这意味着如果启动网络中的多个节点并假设他们可以发现其他节点，它们将自动形成并加入名为elasticsearch的单个集群。</p><p>在单个群集中，您可以拥有任意数量的节点。此外，如果您的网络上当前没有其他Elasticsearch节点正在运行，则默认情况下，启动单个节点将形成名为elasticsearch的新单节点集群。</p><h3 id="索引-index"><a href="#索引-index" class="headerlink" title="索引(index)"></a>索引(index)</h3><p>索引是一些具有相似特征的文档集合。例如，您可以拥有客户数据的索引，产品目录的另一个索引以及订单数据的另一个索引。索引由名称标识（必须全部小写），此名称用于在对其中的文档执行索引，搜索，更新和删除操作时引用索引。</p><p>在单个群集中，您可以根据需要定义任意数量的索引。</p><h3 id="类型-type"><a href="#类型-type" class="headerlink" title="类型(type)"></a>类型(type)</h3><p>一种类型，曾经是索引的逻辑类别/分区，允许您在同一索引中存储不同类型的文档，例如，一种类型用于用户，另一种类型用于博客帖子。不再可能在索引中创建多个类型，并且将在更高版本中删除类型的整个概念。</p><h3 id="Shards-amp-Replicas"><a href="#Shards-amp-Replicas" class="headerlink" title="Shards &amp; Replicas"></a>Shards &amp; Replicas</h3><p>索引可能潜在地存储大量数据，这些数据可能会超出单个节点的硬件限制。例如，占用1TB磁盘空间的十亿份文档的单个索引可能不适合单个节点的磁盘，或者可能太慢而无法单独向单个节点提供搜索请求。</p><p>为了解决这个问题，Elasticsearch提供了将索引细分为多个碎片的能力。当您创建索引时，您可以简单地定义所需的碎片数量。每个分片本身都是一个功能齐全且独立的“索引”，可以托管在集群中的任何节点上。</p><p>分片很重要，主要有两个原因：</p><p>它允许您水平分割/缩放内容量<br>它允许您跨越分片（可能在多个节点上）分发和并行化操作，从而提高性能/吞吐量<br>分片如何分布的机制以及其文档如何聚合回搜索请求完全由Elasticsearch管理，并且作为用户对您透明。</p><p>在可以随时发生故障的网络/云环境中，非常有用，强烈建议使用故障转移机制，以防分片/节点以某种方式脱机或因任何原因消失。为此，Elasticsearch允许您将索引碎片的一个或多个副本制作为简称为副本碎片或副本。</p><p>复制很重要，主要有两个原因：</p><p>它在碎片/节点失败的情况下提供高可用性。因此，请务必注意，副本分片永远不会在与从中复制的原始/主分片相同的节点上分配。<br>它允许您扩展搜索量/吞吐量，因为搜索可以在所有副本上并行执行。<br>总而言之，每个索引可以拆分为多个分片。索引也可以被复制为零（意味着没有副本）或更多次。一旦复制，每个索引将具有主分片（从中复制的原始分片）和副本分片（主分片的副本）。可以在创建索引时为每个索引定义分片和副本的数量。在创建索引之后，您可以随时更改动态副本的数量，但您无法在事后更改碎片的数量。</p><p>默认情况下，Elasticsearch中的每个索引都分配了5个主分片和1个副本，这意味着如果群集中至少有两个节点，则索引将包含5个主分片和另外5个副本分片（1个完整副本），总共每个索引10个碎片。</p><p>每个Elasticsearch分片都是一个Lucene索引。您可以在单个Lucene索引中拥有最大数量的文档。自LUCENE-5843起，限制为2,147,483,519（= Integer.MAX_VALUE - 128）个文件。您可以使用_cat / shards API监视分片大小。</p>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;Elasticsearch是一个近乎实时的搜索平台&lt;br&gt;
     
     </summary>
     
     
-      <category term="java" scheme="https://renguangli.com/tags/java/"/>
+      <category term="elasticsearch" scheme="https://renguangli.com/tags/elasticsearch/"/>
     
   </entry>
   
   <entry>
-    <title>java8之java.lang.Object源码阅读</title>
+    <title>java8之Object源码阅读</title>
     <link href="https://renguangli.com/article/java8-Object.html"/>
     <id>https://renguangli.com/article/java8-Object.html</id>
     <published>2018-06-26T11:07:47.000Z</published>
-    <updated>2018-06-26T11:41:41.423Z</updated>
+    <updated>2018-07-04T02:17:27.807Z</updated>
     
     <content type="html"><![CDATA[<p>Object作为所有类的父类，还是有必要研究一下的。<a id="more"></a><br>Object类一共有以下几个方法<br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png" alt="image"><br>下面我们一个一个来看。</p><h2 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h2><p>clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。</p><p>大家来看下面一个例子</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>定义一个User类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">    Node node;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> age, Node node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.node = node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;age="</span> + age + <span class="string">",node="</span> + node.name + <span class="string">"&#125;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> User <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (User) <span class="keyword">super</span>.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    User user1 = <span class="keyword">new</span> User(<span class="keyword">new</span> Node(<span class="string">"张三"</span>), <span class="number">18</span>);</span><br><span class="line">    User user2 = user1.clone();</span><br><span class="line">    user2.node.name = <span class="string">"李四"</span>;</span><br><span class="line">    System.out.println(user1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>打印结果</p><blockquote><p>User{age=18,node=李四}</p></blockquote><p>看最后一行输出，当我们改变user2的node属性时，user1的node属性也改变了，说明clone方法只是拷贝了node属性的引用，实际上user1、user2的node属性指向的是堆内存中的同一个对象。</p>]]></content>
     
