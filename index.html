@@ -11,10 +11,8 @@
 
 
 
-  
 
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,10 +20,6 @@
 <meta name="theme-color" content="#222">
 
 
-
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -93,9 +87,9 @@
     sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
-    lazyload: false,
+    lazyload: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -137,13 +131,32 @@
   };
 </script>
 
-  <title>Dali`s Blogs</title>
+  <title>Dali`s Blogs &mdash; 大力的技术博客</title>
   
 
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106555827-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-106555827-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ba063f35168779a257f7e62f7b801df1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -228,39 +241,39 @@
           
           <li class="menu-item menu-item-home menu-item-active">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />首页</a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+    <a href="/tags" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签</a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+    <a href="/categories" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类</a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+    <a href="/archives" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档</a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+    <a href="/about" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />关于</a>
   </li>
 
       
@@ -388,13 +401,9 @@
                 
               
 
-              <time title="创建时间：2018-07-11 14:24:23 / 修改时间：14:25:12" itemprop="dateCreated datePublished" datetime="2018-07-11T14:24:23+08:00">2018-07-11</time>
+              <time title="创建时间：2018-07-11 14:24:23" itemprop="dateCreated datePublished" datetime="2018-07-11T14:24:23+08:00">2018-07-11</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -443,7 +452,7 @@
 转载自 阮一峰的网络日志
 
 一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。
-需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对
+需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -549,13 +558,9 @@
                 
               
 
-              <time title="创建时间：2018-07-11 11:44:28 / 修改时间：12:01:26" itemprop="dateCreated datePublished" datetime="2018-07-11T11:44:28+08:00">2018-07-11</time>
+              <time title="创建时间：2018-07-11 11:44:28" itemprop="dateCreated datePublished" datetime="2018-07-11T11:44:28+08:00">2018-07-11</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -601,8 +606,7 @@
         
           
           什么是序列化、反序列化？序列化是将对象转换为可传输格式的过程。 是一种数据的持久化手段。一般是以字节码或XML格式传输。而字节码或XML编码格式可以还原为完全相等的对象。这个相反的过程称为反序列化。
-有哪些应用场景。一般广泛应用于网络传输，RMI和RPC等场景中。
-Java中如何实现序列化和反序列化
+有哪些应用场景。一般广泛应用于网络传输，
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -708,13 +712,9 @@ Java中如何实现序列化和反序列化
                 
               
 
-              <time title="创建时间：2018-07-04 10:01:40 / 修改时间：12:57:34" itemprop="dateCreated datePublished" datetime="2018-07-04T10:01:40+08:00">2018-07-04</time>
+              <time title="创建时间：2018-07-04 10:01:40" itemprop="dateCreated datePublished" datetime="2018-07-04T10:01:40+08:00">2018-07-04</time>
             
 
-            
-              
-
-              
             
           </span>
 
@@ -867,22 +867,6 @@ Java中如何实现序列化和反序列化
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-04 10:17:27" itemprop="dateModified" datetime="2018-07-04T10:17:27+08:00">2018-07-04</time>
-              
-            
           </span>
 
           
@@ -1033,22 +1017,6 @@ Java中如何实现序列化和反序列化
               <time title="创建时间：2018-06-14 17:54:52" itemprop="dateCreated datePublished" datetime="2018-06-14T17:54:52+08:00">2018-06-14</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-16 19:38:50" itemprop="dateModified" datetime="2018-06-16T19:38:50+08:00">2018-06-16</time>
-              
             
           </span>
 
@@ -1202,22 +1170,6 @@ Java中如何实现序列化和反序列化
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-12 10:06:08" itemprop="dateModified" datetime="2018-06-12T10:06:08+08:00">2018-06-12</time>
-              
-            
           </span>
 
           
@@ -1370,22 +1322,6 @@ Java中如何实现序列化和反序列化
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-11 17:46:22" itemprop="dateModified" datetime="2018-06-11T17:46:22+08:00">2018-06-11</time>
-              
-            
           </span>
 
           
@@ -1537,22 +1473,6 @@ Java中如何实现序列化和反序列化
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-16 00:37:44" itemprop="dateModified" datetime="2018-06-16T00:37:44+08:00">2018-06-16</time>
-              
-            
           </span>
 
           
@@ -1703,22 +1623,6 @@ Java中如何实现序列化和反序列化
               <time title="创建时间：2017-11-02 18:27:13" itemprop="dateCreated datePublished" datetime="2017-11-02T18:27:13+08:00">2017-11-02</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-15 23:49:35" itemprop="dateModified" datetime="2018-06-15T23:49:35+08:00">2018-06-15</time>
-              
             
           </span>
 
@@ -1874,22 +1778,6 @@ Java中如何实现序列化和反序列化
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-26 19:28:16" itemprop="dateModified" datetime="2018-06-26T19:28:16+08:00">2018-06-26</time>
-              
-            
           </span>
 
           
@@ -2012,6 +1900,10 @@ Java中如何实现序列化和反序列化
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="大力" />
+            
               <p class="site-author-name" itemprop="name">大力</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -2021,7 +1913,7 @@ Java中如何实现序列化和反序列化
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/">
+                  <a href="/archives">
                 
                     <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
@@ -2069,6 +1961,30 @@ Java中如何实现序列化和反序列化
             </div>
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/renguangli" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:renguangligg@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/renguangligg" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/renguangli" target="_blank" title="StackOverflow" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>StackOverflow</a>
+                  
+                </span>
+              
+            </div>
           
 
           
@@ -2160,6 +2076,8 @@ Java中如何实现序列化和反序列化
 
 
 
+  
+
 
 
 
@@ -2178,12 +2096,19 @@ Java中如何实现序列化和反序列化
 
 
 
+
+  
 
 
 
   
   
     <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
@@ -2199,6 +2124,11 @@ Java中如何实现序列化和反序列化
   
   
     <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
   
 
 
@@ -2697,37 +2627,88 @@ Java中如何实现序列化和反序列化
 
   
   
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.3.0"></script>
+
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
   <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
   </script>
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
