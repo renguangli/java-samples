@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://renguangli.com/"/>
-  <updated>2018-07-12T07:16:11.880Z</updated>
+  <updated>2018-07-12T07:20:34.971Z</updated>
   <id>https://renguangli.com/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>haha</title>
+    <link href="https://renguangli.com/article/11813010-85a4-11e8-9525-4f84276e1aee.html"/>
+    <id>https://renguangli.com/article/11813010-85a4-11e8-9525-4f84276e1aee.html</id>
+    <published>2018-07-12T07:20:34.000Z</published>
+    <updated>2018-07-12T07:20:34.971Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="java" scheme="https://renguangli.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>DDOS攻击的防范教程</title>
