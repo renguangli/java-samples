@@ -244,40 +244,35 @@
         
           
           <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />首页</a>
+    <a href="/" rel="section">首页</a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-tags">
-    <a href="/tags" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />标签</a>
+    <a href="/tags" rel="section">标签<span class="badge">7</span></a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-categories">
-    <a href="/categories" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />分类</a>
+    <a href="/categories" rel="section">分类<span class="badge">0</span></a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-archives">
-    <a href="/archives" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />归档</a>
+    <a href="/archives" rel="section">归档<span class="badge">16</span></a>
   </li>
         
         
         
           
           <li class="menu-item menu-item-about">
-    <a href="/about" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />关于</a>
+    <a href="/about" rel="section">关于</a>
   </li>
 
       
@@ -286,8 +281,7 @@
           
             <a href="javascript:;" class="popup-trigger">
           
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+            搜索</a>
         </li>
       
     </ul>
@@ -492,7 +486,14 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
+      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-image.html" rel="bookmark">docker入门之镜像</a></div>
       
     </li>
   
@@ -506,13 +507,6 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/article/88387b60-70b3-11e8-a0c3-3d78ce8af5d4.html" rel="bookmark">docker入门之镜像仓库</a></div>
       
     </li>
@@ -520,7 +514,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/docker-image.html" rel="bookmark">docker入门之镜像</a></div>
+      <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
       
     </li>
   
@@ -797,9 +791,15 @@
 
 
 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a></div>
 
 
 
@@ -968,7 +968,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
