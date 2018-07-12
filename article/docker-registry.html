@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="开放80端口1firewall-cmd --zone=public --add-port=80/tcp --permanent 命令含义：    –zone #作用域   –add-port=80/tcp  #添加端口，格式为：端口/通讯协议   –permanent  #永久生效，没有此参数重启后失效    关闭80端口 1firewall-cmd  --zone=public --remove">
-<meta name="keywords" content="每天学点儿linux">
+  <meta name="description" content="docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每天学点儿linux--centos7开放端口号">
-<meta property="og:url" content="https://renguangli.com/article/centos-open-port.html">
+<meta property="og:title" content="docker入门之镜像仓库">
+<meta property="og:url" content="https://renguangli.com/article/docker-registry.html">
 <meta property="og:site_name" content="Dali`s Blogs">
-<meta property="og:description" content="开放80端口1firewall-cmd --zone=public --add-port=80/tcp --permanent 命令含义：    –zone #作用域   –add-port=80/tcp  #添加端口，格式为：端口/通讯协议   –permanent  #永久生效，没有此参数重启后失效    关闭80端口 1firewall-cmd  --zone=public --remove">
+<meta property="og:description" content="docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T07:17:20.304Z">
+<meta property="og:updated_time" content="2018-07-12T07:16:55.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="每天学点儿linux--centos7开放端口号">
-<meta name="twitter:description" content="开放80端口1firewall-cmd --zone=public --add-port=80/tcp --permanent 命令含义：    –zone #作用域   –add-port=80/tcp  #添加端口，格式为：端口/通讯协议   –permanent  #永久生效，没有此参数重启后失效    关闭80端口 1firewall-cmd  --zone=public --remove">
+<meta name="twitter:title" content="docker入门之镜像仓库">
+<meta name="twitter:description" content="docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://renguangli.com/article/centos-open-port.html"/>
+  <link rel="canonical" href="https://renguangli.com/article/docker-registry.html"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>每天学点儿linux--centos7开放端口号 | Dali`s Blogs</title>
+  <title>docker入门之镜像仓库 | Dali`s Blogs</title>
   
 
 
@@ -363,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://renguangli.com/article/centos-open-port.html">
+    <link itemprop="mainEntityOfPage" href="https://renguangli.com/article/docker-registry.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大力">
@@ -380,7 +380,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">每天学点儿linux--centos7开放端口号
+          <h2 class="post-title" itemprop="name headline">docker入门之镜像仓库
               
             
           </h2>
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2018-05-15 19:44:20" itemprop="dateCreated datePublished" datetime="2018-05-15T19:44:20+08:00">2018-05-15</time>
+              <time title="创建时间：2017-11-02 18:27:13" itemprop="dateCreated datePublished" datetime="2017-11-02T18:27:13+08:00">2017-11-02</time>
             
 
             
@@ -419,7 +419,7 @@
 
           
           
-             <span id="/article/centos-open-port.html" class="leancloud_visitors" data-flag-title="每天学点儿linux--centos7开放端口号">
+             <span id="/article/docker-registry.html" class="leancloud_visitors" data-flag-title="docker入门之镜像仓库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,19 +450,7 @@
       
 
       
-        <p>开放80端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure></p>
-<p>命令含义：  </p>
-<ul>
-<li>–zone #作用域  </li>
-<li>–add-port=80/tcp  #添加端口，格式为：端口/通讯协议  </li>
-<li>–permanent  #永久生效，没有此参数重启后失效  </li>
-</ul>
-<p>关闭80端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd  --zone=public --remove-port=80/tcp --permanent</span><br></pre></td></tr></table></figure>
-<p>查看防火墙状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld.service</span><br></pre></td></tr></table></figure>
-<p>启动|关闭|重新启动  防火墙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl [start|stop|restart] firewalld.service</span><br></pre></td></tr></table></figure>
+        <p>docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所</p>
 
       
     </div>
@@ -476,7 +464,35 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/linux-vi.html" rel="bookmark">每天学点儿linux--vi编辑器的使用</a></div>
+      <div class="popular-posts-title"><a href="/article/docker-container.html" rel="bookmark">docker入门之容器</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/dockerfile.html" rel="bookmark">docker入门之Dockerfile</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-image.html" rel="bookmark">docker入门之镜像</a></div>
       
     </li>
   
@@ -537,7 +553,7 @@
     <strong>本文作者： </strong>大力</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://renguangli.com/article/centos-open-port.html" title="每天学点儿linux--centos7开放端口号">https://renguangli.com/article/centos-open-port.html</a>
+    <a href="https://renguangli.com/article/docker-registry.html" title="docker入门之镜像仓库">https://renguangli.com/article/docker-registry.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -550,7 +566,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/每天学点儿linux/" rel="tag"># 每天学点儿linux</a>
+            <a href="/tags/docker/" rel="tag"># docker</a>
           
         </div>
       
@@ -563,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/class.html" rel="next" title="字节码指令集">
-                <i class="fa fa-chevron-left"></i> 字节码指令集
+              <a href="/article/dockerfile.html" rel="next" title="docker入门之Dockerfile">
+                <i class="fa fa-chevron-left"></i> docker入门之Dockerfile
               </a>
             
           </div>
@@ -573,8 +589,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/nginx-yum.html" rel="prev" title="每天学点儿linux--centos配置nginx-yum源">
-                每天学点儿linux--centos配置nginx-yum源 <i class="fa fa-chevron-right"></i>
+              <a href="/article/class.html" rel="prev" title="字节码指令集">
+                字节码指令集 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

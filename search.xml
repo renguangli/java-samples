@@ -66,7 +66,7 @@
   </entry>
   <entry>
     <title><![CDATA[docker入门之镜像仓库]]></title>
-    <url>%2Farticle%2F88387b60-70b3-11e8-a0c3-3d78ce8af5d4.html</url>
+    <url>%2Farticle%2Fdocker-registry.html</url>
     <content type="text"><![CDATA[docker仓库类似于代码仓库，它是docker集中存放镜像文件的场所]]></content>
       <tags>
         <tag>docker</tag>
@@ -116,6 +116,9 @@
     <title><![CDATA[hexo之博客搭建]]></title>
     <url>%2Farticle%2Fhexo.html</url>
     <content type="text"><![CDATA[什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页，详情请看hexo官网。在使用之前电脑必须安装nodejs和git 安装hexo1234$ npm install -g hexo-cli$ hexo init blog$ cd blog$ npm install 创建新文章1$ hexo new "文章标题" 如果文章标题之间有空格要用引号引起来 运行1$ hexo server 打开浏览器，在地址栏输入 localhost:4000就会出现如下界面]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
         <tag>hexo</tag>
       </tags>
