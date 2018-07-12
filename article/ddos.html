@@ -108,18 +108,20 @@
 
 
 
-  <meta name="description" content="我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。 FROMFROM指定基础镜像，若镜像不存在Docker会从docker hub中 来查找该镜像。FROM命令必须是Dockerfile的首个命令。 1FROM centos:7.2.1511 MAINTAINER维护者信息,一般用来指定作者,紧跟FROM命令 1MAINTAINER Ren Guangli &amp;l">
-<meta name="keywords" content="docker">
+  <meta name="description" content="转载自 阮一峰的网络日志  一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。 需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对我最有帮助的一些解决方案。  一、DDOS 是什么？首先，我来解释一下，DDOS 是什么。 举例来说">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker入门之Dockerfile">
-<meta property="og:url" content="https://renguangli.com/article/dockerfile.html">
+<meta property="og:title" content="DDOS攻击的防范教程">
+<meta property="og:url" content="https://renguangli.com/article/ddos.html">
 <meta property="og:site_name" content="Dali`s Blogs">
-<meta property="og:description" content="我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。 FROMFROM指定基础镜像，若镜像不存在Docker会从docker hub中 来查找该镜像。FROM命令必须是Dockerfile的首个命令。 1FROM centos:7.2.1511 MAINTAINER维护者信息,一般用来指定作者,紧跟FROM命令 1MAINTAINER Ren Guangli &amp;l">
+<meta property="og:description" content="转载自 阮一峰的网络日志  一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。 需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对我最有帮助的一些解决方案。  一、DDOS 是什么？首先，我来解释一下，DDOS 是什么。 举例来说">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T11:02:48.067Z">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201806/bg2018062601.jpg">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201806/bg2018062603.jpg">
+<meta property="og:updated_time" content="2018-07-12T11:24:07.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker入门之Dockerfile">
-<meta name="twitter:description" content="我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。 FROMFROM指定基础镜像，若镜像不存在Docker会从docker hub中 来查找该镜像。FROM命令必须是Dockerfile的首个命令。 1FROM centos:7.2.1511 MAINTAINER维护者信息,一般用来指定作者,紧跟FROM命令 1MAINTAINER Ren Guangli &amp;l">
+<meta name="twitter:title" content="DDOS攻击的防范教程">
+<meta name="twitter:description" content="转载自 阮一峰的网络日志  一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。 需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对我最有帮助的一些解决方案。  一、DDOS 是什么？首先，我来解释一下，DDOS 是什么。 举例来说">
+<meta name="twitter:image" content="https://www.wangbase.com/blogimg/asset/201806/bg2018062601.jpg">
 
 
 
@@ -128,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="https://renguangli.com/article/dockerfile.html"/>
+  <link rel="canonical" href="https://renguangli.com/article/ddos.html"/>
 
 
 
@@ -138,7 +140,7 @@
   };
 </script>
 
-  <title>docker入门之Dockerfile | Dali`s Blogs</title>
+  <title>DDOS攻击的防范教程 | Dali`s Blogs</title>
   
 
 
@@ -363,7 +365,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://renguangli.com/article/dockerfile.html">
+    <link itemprop="mainEntityOfPage" href="https://renguangli.com/article/ddos.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大力">
@@ -380,7 +382,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">docker入门之Dockerfile
+          <h2 class="post-title" itemprop="name headline">DDOS攻击的防范教程
               
             
           </h2>
@@ -405,13 +407,31 @@
                 
               
 
-              <time title="创建时间：2017-10-31 18:27:13" itemprop="dateCreated datePublished" datetime="2017-10-31T18:27:13+08:00">2017-10-31</time>
+              <time title="创建时间：2018-07-12 19:23:27" itemprop="dateCreated datePublished" datetime="2018-07-12T19:23:27+08:00">2018-07-12</time>
             
 
             
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/安全/" itemprop="url" rel="index"><span itemprop="name">安全</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -419,7 +439,7 @@
 
           
           
-             <span id="/article/dockerfile.html" class="leancloud_visitors" data-flag-title="docker入门之Dockerfile">
+             <span id="/article/ddos.html" class="leancloud_visitors" data-flag-title="DDOS攻击的防范教程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,85 +470,53 @@
       
 
       
-        <p>我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。</p>
-<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p><code>FROM</code>指定基础镜像，若镜像不存在Docker会从docker hub中 来查找该镜像。<code>FROM</code>命令必须是Dockerfile的首个命令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:7.2.1511</span><br></pre></td></tr></table></figure>
-<h3 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h3><p>维护者信息,一般用来指定作者,紧跟<code>FROM</code>命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAINTAINER Ren Guangli &lt;renguangli@bonc.com.cn&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h3><p>Dockerfile中的<code>COPY</code>指令和<code>ADD</code>指令都可以将主机上的资源复制或加入到容器镜像中，都是在构建镜像的过程中完成的。<code>ADD</code>指令不仅能够将构建命令所在的主机本地的文件或目录，而且能够将远程URL所对应的文件或目录，作为资源复制到镜像文件系统。如果源文件是identity, gzip, bzip2，xz，tar.gz，tgz等类型的压缩文件，会添加tar -x命令，自动解压</p>
-<blockquote>
-<p>对于从远程URL获取资源的情况，由于ADD指令不支持认证，如果从远程获取资源需要认证，则只能使用RUN wget或RUN curl替代。<br>另外，如果源路径的资源发生变化，则该ADD指令将使Docker Cache失效，Dockerfile中后续的所有指令都不能使用缓存。因此尽量将ADD指令放在Dockerfile的后面。</p>
+        <blockquote>
+<p>转载自 <a href="http://www.ruanyifeng.com/blog/2018/06/ddos.html" target="_blank" rel="noopener">阮一峰的网络日志</a></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># exec格式用法</span><br><span class="line">ADD [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]</span><br><span class="line">ADD [&quot;hello.sh&quot;,&quot;docker.sh&quot;,&quot;/mnt&quot;]</span><br></pre></td></tr></table></figure>
-<p>适合路径中带有空格的情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># shell格式用法</span><br><span class="line">ADD &lt;src&gt;... &lt;dest&gt;</span><br><span class="line">ADD hello.sh docker.sh /mnt</span><br></pre></td></tr></table></figure></p>
-<p>注意事项</p>
-<ul>
-<li>源路径可以有多个</li>
-<li>源路径是相对于执行build的相对路径</li>
-<li>源路径如果是本地路径，必须是build上下文中的路径</li>
-<li>源路径如果是一个目录，则该目录下的所有内容都将被加入到容器，但是该目录本身不会</li>
-<li>目标路径必须是绝对路径，或相对于WORKDIR的相对路径</li>
-<li>目标路径如果不存在，则会创建相应的完整路径</li>
-<li>路径中可以使用通配符</li>
-</ul>
-<h3 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h3><p>和<code>ADD</code>指令类似，只是不能从远端获取资源和自动解压压缩文件</p>
-<h3 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h3><p>配置环境变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ENV &lt;key&gt; &lt;value&gt;</span><br><span class="line">ENV &lt;key&gt;=&lt;value&gt; ...</span><br></pre></td></tr></table></figure>
-<p>第二种格式可以设置多个键值对，推荐在一条<code>ENV</code>指令中设置多个键值对，因为这样产生一个缓存层。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENV JAVA_HOME=/mnt/jdk1.7 PATH=$JAVA_HOME/bin:$PATH CLASSPATH=.:$JAVA_HOME/lib</span><br></pre></td></tr></table></figure>
-<h3 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPOSE &lt;port&gt; [&lt;port&gt;...]</span><br></pre></td></tr></table></figure>
-<p>指定于外界交互的端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPOSE 8080 443</span><br></pre></td></tr></table></figure>
-<p>在容器启动时用-p传递参数，例如<code>docker run -d -p 8088:8080 -p 8089:443 tomcat:7.0.81</code>将容器内的8080绑定到本机的8088端口,443绑定到本机的8089端口</p>
-<h3 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER root</span><br></pre></td></tr></table></figure>
-<p>指定运行容器时的用户名或 UID，后续的RUN、CMD、ENTRYPOINT也会使用指定用户。</p>
-<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /path/to/workdir</span><br></pre></td></tr></table></figure>
-<p>为后续的RUN、CMD、ENTRYPOINT指令配置工作目录。可以使用多个WORKDIR指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN pwd</span><br></pre></td></tr></table></figure>
-<p>最终路径是/a/b/c。</p>
-<p>WORKDIR指令可以在ENV设置变量之后调用环境变量:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ENV DIRPATH /path</span><br><span class="line">WORKDIR $DIRPATH/$DIRNAME</span><br></pre></td></tr></table></figure>
-<p>最终路径则为 <code>/path/$DIRNAME</code>。</p>
-<h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h2><p><a href="http://www.docker.org.cn/dockerppt/114.html" target="_blank" rel="noopener">http://www.docker.org.cn/dockerppt/114.html</a><br><a href="http://www.cnblogs.com/sorex/p/6481407.html" target="_blank" rel="noopener">http://www.cnblogs.com/sorex/p/6481407.html</a><br><a href="http://blog.csdn.net/taiyangdao/article/details/73222601" target="_blank" rel="noopener">http://blog.csdn.net/taiyangdao/article/details/73222601</a> </p>
+<p>一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。</p>
+<p>需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对我最有帮助的一些解决方案。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201806/bg2018062601.jpg" alt="image"></p>
+<h2 id="一、DDOS-是什么？"><a href="#一、DDOS-是什么？" class="headerlink" title="一、DDOS 是什么？"></a>一、DDOS 是什么？</h2><p>首先，我来解释一下，DDOS 是什么。</p>
+<p>举例来说，我开了一家餐厅，正常情况下，最多可以容纳30个人同时进餐。你直接走进餐厅，找一张桌子坐下点餐，马上就可以吃到东西。</p>
+<p>很不幸，我得罪了一个流氓。他派出300个人同时涌进餐厅。这些人看上去跟正常的顾客一样，每个都说”赶快上餐”。但是，餐厅的容量只有30个人，根本不可能同时满足这么多的点餐需求，加上他们把门口都堵死了，里三层外三层，正常用餐的客人根本进不来，实际上就把餐厅瘫痪了。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201806/bg2018062603.jpg" alt="image"></p>
+<p>这就是 DDOS 攻击，它在短时间内发起大量请求，耗尽服务器的资源，无法响应正常的访问，造成网站实质下线</p>
+<p>DDOS 里面的 DOS 是 denial of service（停止服务）的缩写，表示这种攻击的目的，就是使得服务中断。最前面的那个 D 是 distributed （分布式），表示攻击不是来自一个地方，而是来自四面八方，因此更难防。你关了前门，他从后门进来；你关了后门，他从窗口跳起来。</p>
+<h2 id="二、DDOS-的种类"><a href="#二、DDOS-的种类" class="headerlink" title="二、DDOS 的种类"></a>二、DDOS 的种类</h2><p>DDOS 不是一种攻击，而是一大类攻击的总称。它有几十种类型，新的攻击方法还在不断发明出来。网站运行的各个环节，都可以是攻击目标。只要把一个环节攻破，使得整个流程跑不起来，就达到了瘫痪服务的目的。</p>
+<p>其中，比较常见的一种攻击是 cc 攻击。它就是简单粗暴地送来大量正常的请求，超出服务器的最大承受量，导致宕机。我遭遇的就是 cc 攻击，最多的时候全世界大概20多个 IP 地址轮流发出请求，每个地址的请求量在每秒200次~300次。我看访问日志的时候，就觉得那些请求像洪水一样涌来，一眨眼就是一大堆，几分钟的时间，日志文件的体积就大了100MB。说实话，这只能算小攻击，但是我的个人网站没有任何防护，服务器还是跟其他人共享的，这种流量一来立刻就下线了。</p>
+<p>本文以下的内容都是针对 cc 攻击。</p>
+<h2 id="三、备份网站"><a href="#三、备份网站" class="headerlink" title="三、备份网站"></a>三、备份网站</h2><p>防范 DDOS 的第一步，就是你要有一个备份网站，或者最低限度有一个临时主页。生产服务器万一下线了，可以立刻切换到备份网站，不至于毫无办法。</p>
+<p>备份网站不一定是全功能的，如果能做到全静态浏览，就能满足需求。最低限度应该可以显示公告，告诉用户，网站出了问题，正在全力抢修。我的个人网站下线的时候，我就做了一个临时主页，很简单的几行 HTML 代码。</p>
+<p>这种临时主页建议放到 Github Pages 或者 Netlify，它们的带宽大，可以应对攻击，而且都支持绑定域名，还能从源码自动构建。</p>
+<h2 id="四、HTTP-请求的拦截"><a href="#四、HTTP-请求的拦截" class="headerlink" title="四、HTTP 请求的拦截"></a>四、HTTP 请求的拦截</h2><p>如果恶意请求有特征，对付起来很简单：直接拦截它就行了</p>
+<p>HTTP 请求的特征一般有两种：IP 地址和 User Agent 字段。比如，恶意请求都是从某个 IP 段发出的，那么把这个 IP 段封掉就行了。或者，它们的 User Agent 字段有特征（包含某个特定的词语），那就把带有这个词语的请求拦截。</p>
+<p>拦截可以在三个层次做。</p>
+<h3 id="（1）专用硬件"><a href="#（1）专用硬件" class="headerlink" title="（1）专用硬件"></a>（1）专用硬件</h3><p>Web 服务器的前面可以架设硬件防火墙，专门过滤请求。这种效果最好，但是价格也最贵</p>
+<p>###　（2）本机防火墙</p>
+<p>操作系统都带有软件防火墙，Linux 服务器一般使用 iptables。比如，拦截 IP 地址1.2.3.4的请求，可以执行下面的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -s 1.2.3.4 -j DROP</span><br></pre></td></tr></table></figure>
+<p>iptables 比较复杂，我也不太会用。它对服务器性能有一定影响，也防不住大型攻击。</p>
+<h3 id="（3）Web-服务器"><a href="#（3）Web-服务器" class="headerlink" title="（3）Web 服务器"></a>（3）Web 服务器</h3><p>Web 服务器也可以过滤请求。拦截 IP 地址1.2.3.4，nginx 的写法如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  deny 1.2.3.4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Apache 的写法是在.htaccess文件里面，加上下面一段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;RequireAll&gt;</span><br><span class="line">    Require all granted</span><br><span class="line">    Require not ip 1.2.3.4&lt;/RequireAll&gt;</span><br></pre></td></tr></table></figure>
+<p>如果想要更精确的控制（比如自动识别并拦截那些频繁请求的 IP 地址），就要用到 WAF。这里就不详细介绍了，nginx 这方面的设置可以参考这里和这里。</p>
+<p>Web 服务器的拦截非常消耗性能，尤其是 Apache。稍微大一点的攻击，这种方法就没用了。</p>
+<h3 id="五、带宽扩容"><a href="#五、带宽扩容" class="headerlink" title="五、带宽扩容"></a>五、带宽扩容</h3><p>上一节的 HTTP 拦截有一个前提，就是请求必须有特征。但是，真正的 DDOS 攻击是没有特征的，它的请求看上去跟正常请求一样，而且来自不同的 IP 地址，所以没法拦截。这就是为什么 DDOS 特别难防的原因。</p>
+<p>当然，这样的 DDOS 攻击的成本不低，普通的网站不会有这种待遇。不过，真要遇到了该怎么办呢，有没有根本性的防范方法呢？</p>
+<p>答案很简单，就是设法把这些请求都消化掉。30个人的餐厅来了300人，那就想办法把餐厅扩大（比如临时再租一个门面，并请一些厨师），让300个人都能坐下，那么就不影响正常的用户了。对于网站来说，就是在短时间内急剧扩容，提供几倍或几十倍的带宽，顶住大流量的请求。这就是为什么云服务商可以提供防护产品，因为他们有大量冗余带宽，可以用来消化 DDOS 攻击。</p>
+<p>一个朋友传授了一个方法，给我留下深刻印象。某云服务商承诺，每个主机保 5G 流量以下的攻击，他们就一口气买了5个。网站架设在其中一个主机上面，但是不暴露给用户，其他主机都是镜像，用来面对用户，DNS 会把访问量均匀分配到这四台镜像服务器。一旦出现攻击，这种架构就可以防住 20G 的流量，如果有更大的攻击，那就买更多的临时主机，不断扩容镜像。</p>
+<h3 id="六、CDN"><a href="#六、CDN" class="headerlink" title="六、CDN"></a>六、CDN</h3><p>CDN 指的是网站的静态内容分发到多个服务器，用户就近访问，提高速度。因此，CDN 也是带宽扩容的一种方法，可以用来防御 DDOS 攻击。</p>
+<p>网站内容存放在源服务器，CDN 上面是内容的缓存。用户只允许访问 CDN，如果内容不在 CDN 上，CDN 再向源服务器发出请求。这样的话，只要 CDN 够大，就可以抵御很大的攻击。不过，这种方法有一个前提，网站的大部分内容必须可以静态缓存。对于动态内容为主的网站（比如论坛），就要想别的办法，尽量减少用户对动态数据的请求。</p>
+<p>上一节提到的镜像服务器，本质就是自己搭建一个微型 CDN。各大云服务商提供的高防 IP，背后也是这样做的：网站域名指向高防 IP，它提供一个缓冲层，清洗流量，并对源服务器的内容进行缓存。</p>
+<p>这里有一个关键点，一旦上了 CDN，千万不要泄露源服务器的 IP 地址，否则攻击者可以绕过 CDN 直接攻击源服务器，前面的努力都白费。搜一下”绕过 CDN 获取真实 IP 地址”，你就会知道国内的黑产行业有多猖獗。</p>
+<p>cloudflare 是一个免费 CDN 服务，并提供防火墙，高度推荐。我还要感谢 v2ex.com 的站长 @livid 热情提供帮助，我现在用的就是他们的 CDN 产品。     </p>
 
       
     </div>
 
     
       
-
-  <div class="popular-posts-header">推荐阅读</div>
-  <ul class="popular-posts">
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/article/docker-image.html" rel="bookmark">docker入门之镜像</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/article/docker-container.html" rel="bookmark">docker入门之容器</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
-      
-    </li>
-  
-  </ul>
 
 
     
@@ -585,7 +573,7 @@
     <strong>本文作者： </strong>大力</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://renguangli.com/article/dockerfile.html" title="docker入门之Dockerfile">https://renguangli.com/article/dockerfile.html</a>
+    <a href="https://renguangli.com/article/ddos.html" title="DDOS攻击的防范教程">https://renguangli.com/article/ddos.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -596,12 +584,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
-          
-        </div>
-      
 
       
       
@@ -611,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/docker-container.html" rel="next" title="docker入门之容器">
-                <i class="fa fa-chevron-left"></i> docker入门之容器
+              <a href="/article/dockerfile.html" rel="next" title="docker入门之Dockerfile">
+                <i class="fa fa-chevron-left"></i> docker入门之Dockerfile
               </a>
             
           </div>
@@ -620,10 +602,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/article/ddos.html" rel="prev" title="DDOS攻击的防范教程">
-                DDOS攻击的防范教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -807,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">1.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAINTAINER"><span class="nav-number">2.</span> <span class="nav-text">MAINTAINER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD"><span class="nav-number">3.</span> <span class="nav-text">ADD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COPY"><span class="nav-number">4.</span> <span class="nav-text">COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">5.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSE"><span class="nav-number">6.</span> <span class="nav-text">EXPOSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">7.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">8.</span> <span class="nav-text">WORKDIR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考连接"><span class="nav-number"></span> <span class="nav-text">参考连接</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、DDOS-是什么？"><span class="nav-number">1.</span> <span class="nav-text">一、DDOS 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、DDOS-的种类"><span class="nav-number">2.</span> <span class="nav-text">二、DDOS 的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、备份网站"><span class="nav-number">3.</span> <span class="nav-text">三、备份网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、HTTP-请求的拦截"><span class="nav-number">4.</span> <span class="nav-text">四、HTTP 请求的拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）专用硬件"><span class="nav-number">4.1.</span> <span class="nav-text">（1）专用硬件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）Web-服务器"><span class="nav-number">4.2.</span> <span class="nav-text">（3）Web 服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、带宽扩容"><span class="nav-number">4.3.</span> <span class="nav-text">五、带宽扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、CDN"><span class="nav-number">4.4.</span> <span class="nav-text">六、CDN</span></a></li></ol></li></ol></div>
             
 
           </div>

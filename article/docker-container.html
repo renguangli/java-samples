@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Dali`s Blogs">
 <meta property="og:description" content="容器是docker的另一个核心概念，简单来说容器就是镜像的一个运行示例。 查看容器使用docker ps命令查看运行着的容器 123[root@localhost ~]# docker psCONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T10:26:34.431Z">
+<meta property="og:updated_time" content="2018-07-12T11:07:39.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门之容器">
 <meta name="twitter:description" content="容器是docker的另一个核心概念，简单来说容器就是镜像的一个运行示例。 查看容器使用docker ps命令查看运行着的容器 123[root@localhost ~]# docker psCONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS">
@@ -461,7 +461,7 @@
 <p>如果不加name的话随机分配一个名字</p>
 <h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><p>使用<code>docker start 容器名称或容器ID</code>来启动一个容器，例如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker ps -a</span><br><span class="line">229929eb660f        renguangli/nginx:1.0   &quot;nginx -g &apos;daemon off&quot;   17 hours ago        Exited (0) 8 seconds ago                        nginx</span><br><span class="line">[root@localhost ~]# docker start nginx 或者 docker start 229929eb660f</span><br></pre></td></tr></table></figure>
-<h3 id="新建并启动容器"><a href="#新建并启动容器" class="headerlink" title="新建并启动容器"></a>新建并启动容器</h3><p>创建容器后可以用<code>docker start</code>命令启动容器，也可以用<code>docker run</code>命令直接新建并启动容器，<code>docker run</code>相当于先执行<code>docker create</code>命令在执行<code>docker start</code>名利。例如，输出一个”hello docker”</p>
+<h3 id="新建并启动容器"><a href="#新建并启动容器" class="headerlink" title="新建并启动容器"></a>新建并启动容器</h3><p>创建容器后可以用<code>docker start</code>命令启动容器，也可以用<code>docker run</code>命令直接新建并启动容器，<code>docker run</code>相当于先执行<code>docker create</code>命令在执行<code>docker start</code>命令。例如，输出一个”hello docker”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker run ubuntu echo &quot;hello docker&quot;</span><br><span class="line">hello docker</span><br></pre></td></tr></table></figure>
 <p>这跟在本次执行<code>echo &quot;hello docker&quot;</code>几乎没有任何区别，但是在执行<code>docker run</code>命令时经历了复杂的操作：</p>
 <ul>
@@ -494,13 +494,6 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/dockerfile.html" rel="bookmark">docker入门之Dockerfile</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
       
     </li>
@@ -508,7 +501,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
+      <div class="popular-posts-title"><a href="/article/dockerfile.html" rel="bookmark">docker入门之Dockerfile</a></div>
       
     </li>
   
@@ -516,6 +509,13 @@
       
       
       <div class="popular-posts-title"><a href="/article/docker-image.html" rel="bookmark">docker入门之镜像</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
       
     </li>
   
@@ -697,7 +697,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -712,7 +712,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
