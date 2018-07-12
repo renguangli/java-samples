@@ -108,19 +108,19 @@
 
 
 
-  <meta name="description" content="Object作为所有类的父类，还是有必要研究一下的。">
+  <meta name="description" content="Object作为所有类的父类，还是有必要研究一下的。Object类一共有以下几个方法下面我们一个一个来看。 clone()clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。 大家来看下面一个例子 123456public class Node &amp;#123;    String name;">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java8之Object源码阅读">
 <meta property="og:url" content="https://renguangli.com/article/java8-Object.html">
 <meta property="og:site_name" content="Dali`s Blogs">
-<meta property="og:description" content="Object作为所有类的父类，还是有必要研究一下的。">
+<meta property="og:description" content="Object作为所有类的父类，还是有必要研究一下的。Object类一共有以下几个方法下面我们一个一个来看。 clone()clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。 大家来看下面一个例子 123456public class Node &amp;#123;    String name;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png">
-<meta property="og:updated_time" content="2018-07-04T02:17:27.807Z">
+<meta property="og:updated_time" content="2018-07-12T07:12:02.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java8之Object源码阅读">
-<meta name="twitter:description" content="Object作为所有类的父类，还是有必要研究一下的。">
+<meta name="twitter:description" content="Object作为所有类的父类，还是有必要研究一下的。Object类一共有以下几个方法下面我们一个一个来看。 clone()clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。 大家来看下面一个例子 123456public class Node &amp;#123;    String name;">
 <meta name="twitter:image" content="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png">
 
 
@@ -452,7 +452,7 @@
       
 
       
-        <p>Object作为所有类的父类，还是有必要研究一下的。<a id="more"></a><br>Object类一共有以下几个方法<br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png" alt="image"><br>下面我们一个一个来看。</p>
+        <p>Object作为所有类的父类，还是有必要研究一下的。<br>Object类一共有以下几个方法<br><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/java8-Object.png" alt="image"><br>下面我们一个一个来看。</p>
 <h2 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h2><p>clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。</p>
 <p>大家来看下面一个例子</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -484,14 +484,14 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/class.html" rel="bookmark">字节码指令集</a></div>
+      <div class="popular-posts-title"><a href="/article/jdk-jre-jvm.html" rel="bookmark">什么是JDK、JRE、JVM？</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/jdk-jre-jvm.html" rel="bookmark">什么是JDK、JRE、JVM？</a></div>
+      <div class="popular-posts-title"><a href="/article/class.html" rel="bookmark">字节码指令集</a></div>
       
     </li>
   

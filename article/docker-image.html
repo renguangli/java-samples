@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。">
+  <meta name="description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。例如，一个镜像可以包含一个基本的操作系统，里面安装了tomcat(或者其它软件)，我们把它称为tomcat镜像。镜像是创建docker容器的基础。通过版本管理和增量的文件系统，docker提供了十分简单的机制来创建和更新的现有的镜像，也可以从镜像仓库里pull镜像，就像git  pull代码一样。 获取镜像镜像是容器运行的前提条件，官">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker入门之镜像">
 <meta property="og:url" content="https://renguangli.com/article/docker-image.html">
 <meta property="og:site_name" content="Dali`s Blogs">
-<meta property="og:description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。">
+<meta property="og:description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。例如，一个镜像可以包含一个基本的操作系统，里面安装了tomcat(或者其它软件)，我们把它称为tomcat镜像。镜像是创建docker容器的基础。通过版本管理和增量的文件系统，docker提供了十分简单的机制来创建和更新的现有的镜像，也可以从镜像仓库里pull镜像，就像git  pull代码一样。 获取镜像镜像是容器运行的前提条件，官">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-26T11:28:30.307Z">
+<meta property="og:updated_time" content="2018-07-12T07:11:47.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门之镜像">
-<meta name="twitter:description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。">
+<meta name="twitter:description" content="docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。例如，一个镜像可以包含一个基本的操作系统，里面安装了tomcat(或者其它软件)，我们把它称为tomcat镜像。镜像是创建docker容器的基础。通过版本管理和增量的文件系统，docker提供了十分简单的机制来创建和更新的现有的镜像，也可以从镜像仓库里pull镜像，就像git  pull代码一样。 获取镜像镜像是容器运行的前提条件，官">
 
 
 
@@ -450,7 +450,7 @@
       
 
       
-        <p>docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。<a id="more"></a>例如，一个镜像可以包含一个基本的操作系统，里面安装了tomcat(或者其它软件)，我们把它称为tomcat镜像。镜像是创建docker容器的基础。通过版本管理和增量的文件系统，docker提供了十分简单的机制来创建和更新的现有的镜像，也可以从镜像仓库里pull镜像，就像git  pull代码一样。</p>
+        <p>docker镜像类似于虚拟机镜像，可以将它理解为一个只读的模板。例如，一个镜像可以包含一个基本的操作系统，里面安装了tomcat(或者其它软件)，我们把它称为tomcat镜像。镜像是创建docker容器的基础。通过版本管理和增量的文件系统，docker提供了十分简单的机制来创建和更新的现有的镜像，也可以从镜像仓库里pull镜像，就像git  pull代码一样。</p>
 <h2 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h2><p>镜像是容器运行的前提条件，<a href="https://hub.docker.com/" target="_blank" rel="noopener">官方DockerHub</a> 镜像仓库提供了很多个镜像提供大家开放下载。我们可以直接使用<code>docker pull</code>命令直接从Docker Hub镜像源下载镜像<br>命令格式：<code>docker pull name:tag</code>name为镜像名称，tag为镜像的标签(通常用来表示版本信息)\<br>获取一个Ubuntu 14.04系统镜像可以使用<code>docker pull ubuntu:14.04</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker pull ubuntu:14.04</span><br></pre></td></tr></table></figure></p>
 <p>如果不指定tag，则默认会选择latest标签，下载仓库中最新版本的镜像。<br>严格地讲仓库名称还要添加镜像地址(即registry，注册服务器）为前缀，我们使用的是官方Docker Hub，所以前缀可以省略,完整命令为docker pull <code>docker.io/library/ubuntu:14.04</code><br>如果下载非官方的镜像，仓库名称前要指定完整的仓库地址。例如我们从网易的镜像源下载ubuntu 14.04 正确命令为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull hub.c.163.com/ubuntu:latest</span><br></pre></td></tr></table></figure>
@@ -521,13 +521,6 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/article/docker-container.html" rel="bookmark">docker入门之容器</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="/article/docker-deploy.html" rel="bookmark">docker入门之安装</a></div>
       
     </li>
@@ -536,6 +529,13 @@
       
       
       <div class="popular-posts-title"><a href="/article/docker-summary.html" rel="bookmark">docker入门之简介</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/article/docker-container.html" rel="bookmark">docker入门之容器</a></div>
       
     </li>
   

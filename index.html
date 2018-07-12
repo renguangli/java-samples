@@ -454,7 +454,7 @@
 转载自 阮一峰的网络日志
 
 一个多月前，阮一峰老师的个人网站遭受 DDOS 攻击，下线了50多个小时。这篇文章就来谈谈，如何应对这种攻击。
-需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋
+需要说明的是，我对 DDOS 并不精通，从没想过自己会成为攻击目标。攻击发生以后，很多素昧平生的朋友提供了各种帮助和建议，让我学到了很多东西。这里记录的就是对
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -608,7 +608,8 @@
         
           
           什么是序列化、反序列化？序列化是将对象转换为可传输格式的过程。 是一种数据的持久化手段。一般是以字节码或XML格式传输。而字节码或XML编码格式可以还原为完全相等的对象。这个相反的过程称为反序列化。
-有哪些应用场景。一般广泛应用于网络传输，
+有哪些应用场景。一般广泛应用于网络传输，RMI和RPC等场景中。
+Java中如何实现序列化和反序列化
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -760,7 +761,11 @@
 
       
         
-          <p>Elasticsearch是一个近乎实时的搜索平台<br>
+          
+          Elasticsearch是一个近乎实时的搜索平台
+集群群集是一个或多个节点（服务器）的集合，它们一起保存整个数据，并提供跨所有节点的联合索引和搜索功能。集群由默认名称为“elasticsearch”的唯一名称标识。此名称很重要，因为如果节点设置为通过名称加入群集，则节点只能成为群集的一部分。
+确保
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/elasticsearch-base-concepts.html#more" rel="contents">
@@ -911,7 +916,11 @@
 
       
         
-          <p>Object作为所有类的父类，还是有必要研究一下的。
+          
+          Object作为所有类的父类，还是有必要研究一下的。Object类一共有以下几个方法下面我们一个一个来看。
+clone()clone方法是用来拷贝对象的，他是本地方法，由c++实现。clone方法只是浅拷贝，如果对象中包含了另一个复杂对象，clone出来的对象存在被修改的风险。
+大家来看下面一个例子
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/java8-Object.html#more" rel="contents">
@@ -1062,8 +1071,15 @@
 
       
         
-          <p>下面贴一张图来看看他们之间的关系</p>
-<p><img src="https://rgl-1252211075.cos.ap-beijing.myqcloud.com/java/jdk-jre-jvm.png" alt="JDK.JRE.JVM"><br>
+          
+          下面贴一张图来看看他们之间的关系
+
+再看一张java官方更详细的结构图
+
+什么是jdk、jre、jvm？JDK(Java Development Kit) 是Java语言的软件开发工具包，包含了一些开发工具JAVA运行时环境JRE。jdk包含的开发工具有：
+
+javac – 编译器，将源程序转成字节
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/jdk-jre-jvm.html#more" rel="contents">
@@ -1214,8 +1230,11 @@
 
       
         
-          <p>创建/etc/yum.repos.d/nginx.repo文件，并添加一下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo</span><br><span class="line">baseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/</span><br><span class="line">gpgcheck=0</span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure>
+          
+          创建/etc/yum.repos.d/nginx.repo文件，并添加一下内容
+12345[nginx]name=nginx repobaseurl=http://nginx.org/packages/OS/OSRELEASE/$basearch/gpgcheck=0enabled=1
+将OS替换为
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/nginx-yum.html#more" rel="contents">
@@ -1366,7 +1385,14 @@
 
       
         
-          <p>开放80端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br></pre></td></tr></table></figure></p>
+          
+          开放80端口1firewall-cmd --zone=public --add-port=80/tcp --permanent
+命令含义：  
+
+–zone #作用域  
+–add-port=80/tcp  #添加端口，格式为：端口/通讯协议  
+–permanent  #永久生效，没有此参数重启后
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/centos-open-port.html#more" rel="contents">
@@ -1517,7 +1543,9 @@
 
       
         
-          <p>以下为字节码指令集，方便查看<br>nop 什么都不做<br>aconst_null 将null推送至栈顶<br>iconst_m1 将int型-1推送至栈顶<br>iconst_0 将int型0推送至栈顶<br>
+          
+          以下为字节码指令集，方便查看nop 什么都不做aconst_null 将null推送至栈顶iconst_m1 将int型-1推送至栈顶iconst_0 将int型0推送至栈顶iconst_1 将int型1推送至栈顶iconst_2 将int型2推送至栈顶iconst_3 将int型3推送至栈顶ico
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/class.html#more" rel="contents">
@@ -1822,7 +1850,12 @@
 
       
         
-          <p>我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。<br>
+          
+          我们可以使用Dockerfile创建镜像，下面对Dockerfile指令进行简单介绍。
+FROMFROM指定基础镜像，若镜像不存在Docker会从docker hub中 来查找该镜像。FROM命令必须是Dockerfile的首个命令。
+1FROM centos:7.2.1511
+MAINTAINER
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/article/dockerfile.html#more" rel="contents">
