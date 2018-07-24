@@ -26,6 +26,27 @@ public class Singleton {
  *
  * @author renguangli 2018/7/23 16:59
  * @since JDK 1.8
+
+public class Singleton {
+
+    private static Singleton instance;
+
+    private Singleton(){}
+
+    public static synchronized Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+ */
+
+/**
+ * Singleton 饿汉式单例模式-线程安全
+ *
+ * @author renguangli 2018/7/23 16:59
+ * @since JDK 1.8
  */
 public class Singleton {
 
@@ -37,3 +58,4 @@ public class Singleton {
         return instance;
     }
 }
+
