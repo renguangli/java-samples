@@ -1,6 +1,5 @@
 package com.renguangli.string;
 
-import sun.applet.Main;
 
 /**
  * String使用方法和常见面试题
@@ -21,11 +20,26 @@ public class StringExamples {
     }
 
     public static void main(String[] args) {
-        String s1 = "dali";
-        String s2 = new String("dali");
-        String s3 = new String("dali").intern();
-        System.out.println(s1 == s2);//false
-        System.out.println(s1 == s3);//true
-        System.out.println(s2 == s3);//false
+ /*       String s1 = "dali";
+        final String s2 = new String("dali");
+        String s3 = s2.intern();
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        System.out.println(s2 == s3);*/
+
+
+        String baseStr = "baseStr";
+        final String baseFinalStr = "baseStr";
+
+        String str1 = "baseStr01";
+        String str2 = "baseStr"+"01";
+        String str3 = baseStr + "01";
+        String str4 = baseFinalStr+"01";
+        String str5 = new String("baseStr01").intern();
+
+        System.out.println(str1 == str2);//#3  true
+        System.out.println(str1 == str3);//#4 false
+        System.out.println(str1 == str4);//#5 true
+        System.out.println(str1 == str5);//#6 true
     }
 }
