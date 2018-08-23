@@ -19,7 +19,7 @@ public class ProxyTest {
     @Test
     public void dynamicProxy() {
         BuyCarHandler handler = new BuyCarHandler(new BuyCarImpl());
-        BuyCar buyCar = (BuyCar)Proxy.newProxyInstance(BuyCarImpl.class.getClassLoader(), new Class[]{BuyCar.class}, handler);
+        BuyCar buyCar = (BuyCar)Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{BuyCar.class}, handler);
         buyCar.buyCar();
     }
 }
