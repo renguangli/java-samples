@@ -6,10 +6,11 @@
 	<artifactId>java-examples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <modules>
+        <module>data-structure</module>
+        <module>uml-examples</module>
         <module>design-pattern</module>
-        <module>java8-examples</module>
         <module>java-base</module>
-        <module>java-data-structure</module>
+        <module>java8-examples</module>
     </modules>
     <packaging>pom</packaging>
 
