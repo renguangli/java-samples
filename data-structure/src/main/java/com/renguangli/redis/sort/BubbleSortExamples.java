@@ -1,4 +1,4 @@
-package com.renguangli.datastructure.sort;
+package com.renguangli.redis.sort;
 
 /**
  * BubbleSortExamples 冒泡排序

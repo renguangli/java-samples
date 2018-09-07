@@ -1,4 +1,4 @@
-package com.renguangli.datastructure.sort;
+package com.renguangli.redis.sort;
 
 /**
  * FastSortExamples 快速排序

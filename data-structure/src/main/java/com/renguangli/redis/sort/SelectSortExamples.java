@@ -1,4 +1,4 @@
-package com.renguangli.datastructure.sort;
+package com.renguangli.redis.sort;
 
 /**
  * SelectSortExamples 选择排序
