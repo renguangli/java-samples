@@ -1,4 +1,4 @@
-package com.renguangli.datastructure.link;
+package com.renguangli.redis.link;
 
 
 import org.junit.Test;
