@@ -1,4 +1,4 @@
-package com.renguangli.datastructure.link;
+package com.renguangli.redis.link;
 
 /**
  * 单链表实现.
