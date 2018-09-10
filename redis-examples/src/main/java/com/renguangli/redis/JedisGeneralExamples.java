@@ -3,7 +3,6 @@ package com.renguangli.redis;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
 
 import java.util.Set;
 
@@ -16,7 +15,20 @@ public class JedisGeneralExamples {
 
     private Jedis jedis;
 
-    private JedisPool jedisPool = new JedisPool();
+    @Test
+    public void incrdecr() {
+        Long a = jedis.incr("a");
+        System.out.println(a);
+        a = jedis.decr("a");
+        System.out.println(a);
+        a = jedis.incrBy("a", 20);
+        System.out.println(a);
+        a = jedis.decrBy("a", 20);
+        System.out.println(a);
+        Double a1 = jedis.incrByFloat("a", 2.3);
+        System.out.println(a1);
+
+    }
 
     @Test // expire添加过期时间以秒为单位 & ttl 查看过期时间以秒为单位
     public void expire() throws InterruptedException {
@@ -36,6 +48,15 @@ public class JedisGeneralExamples {
          */
         jedis.set("jedis", "jedis");
         System.out.println(jedis.ttl("jedis"));
+    }
+
+    @Test // 键是否存在
+    public void del() {
+        jedis.set("a", "a");
+        jedis.hset("map", "a", "a");
+        jedis.rpush("list", "", "a", "a");
+        Long del = jedis.del("a", "list", "map");
+        System.out.println(del);
     }
 
     @Test // 键是否存在
@@ -75,7 +96,7 @@ public class JedisGeneralExamples {
 
     @Before
     public void initJedis() {
-        jedis = jedisPool.getResource();
+        jedis = JedisClient.getJedis();
     }
 
     @Test

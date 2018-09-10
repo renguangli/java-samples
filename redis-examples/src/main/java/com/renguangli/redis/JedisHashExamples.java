@@ -27,30 +27,23 @@ public class JedisHashExamples {
     }
 
     @Test
-    public void hstrlen() {
+    public void hlen() {
         jedis.hset("map", "a", "a");
         Long map = jedis.hlen("map");
         System.err.println(map);
     }
 
     @Test
-    public void hvals() {
-        Map<String, String> map = new HashMap<>();
-        map.put("a", "a");
-        map.put("b", "b");
-        jedis.hmset("map", map);
-        List<String> keys = jedis.hvals("map");
-        keys.forEach(System.out::println);
-    }
-
-    @Test
-    public void hkeys() {
+    public void hkeyshvals() {
         Map<String, String> map = new HashMap<>();
         map.put("a", "a");
         map.put("b", "b");
         jedis.hmset("map", map);
         Set<String> keys = jedis.hkeys("map");
         keys.forEach(System.out::println);
+
+        List<String> vals = jedis.hvals("map");
+        vals.forEach(System.out::println);
     }
 
     @Test
@@ -116,7 +109,7 @@ public class JedisHashExamples {
 
     @Before
     public void setJedis() {
-        jedis = JedisClient.getJedisPool().getResource();
+        jedis = JedisClient.getJedis();
     }
 
     @After

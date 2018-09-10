@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.renguangli.uml.SUV</OriginalElement>
+  <nodes>
+    <node x="-505.00000000000017" y="259.0000000000001">com.renguangli.uml.SUV</node>
+    <node x="3.0" y="0.0">com.renguangli.uml.Car</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.renguangli.uml.SUV" target="com.renguangli.uml.Car">
+      <point x="0.0" y="-19.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9999999999999997" x="97.0" y="133.0" />
+  <SelectedNodes>
+    <node>com.renguangli.uml.SUV</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

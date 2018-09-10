@@ -7,7 +7,8 @@ package com.renguangli.redis;
  */
 public class Demo {
 
-    static Demo demo = new Demo();
+    Demo demo = new Demo();
+
     static int a;
     static int b = 0;
 
@@ -16,8 +17,13 @@ public class Demo {
     }
 
     public Demo() {
+        System.out.println("============");
         a++;
         b++;
+    }
+
+    public void m() {
+        System.err.println(111111);
     }
 
     public static void main(String[] args) {

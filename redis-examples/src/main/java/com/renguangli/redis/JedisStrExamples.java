@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
 
 
 /**
@@ -16,8 +15,6 @@ import redis.clients.jedis.JedisPool;
 public class JedisStrExamples {
 
     private Jedis jedis;
-
-    private JedisPool jedisPool = new JedisPool();
 
     @Test
     public void str() {
@@ -53,11 +50,12 @@ public class JedisStrExamples {
 
     @Before
     public void getJedis() {
-        jedis = jedisPool.getResource();
+        jedis = JedisClient.getJedis();
     }
 
     @After
     public void close() {
         jedis.close();
     }
+
 }
