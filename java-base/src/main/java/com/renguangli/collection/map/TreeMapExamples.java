@@ -23,9 +23,17 @@ public class TreeMapExamples {
         map.put("treeMap", "treeMap");
         map.put("linkedHashMap", "linkedHashMap");
         map.put("enumMap", "EnumMap");
-
         map.put("map", null);
-
         map.keySet().forEach(System.out::println);
+    }
+
+    /**
+     * Key
+     *
+     * @author renguangli 2018/9/10 17:02
+     * @since JDK 1.8
+     */
+    public enum Key {
+        one,two,three
     }
 }
