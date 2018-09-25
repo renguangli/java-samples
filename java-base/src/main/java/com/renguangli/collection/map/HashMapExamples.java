@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * HashMapExamples
+ * CollectionExamples
  *
  * @author renguangli 2018/9/10 15:20
  * @since JDK 1.8

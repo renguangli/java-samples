@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.renguangli.collection.list.ArrayListExamples</OriginalElement>
+  <nodes>
+    <node x="233.0" y="81.0">java.util.ArrayList</node>
+    <node x="192.0" y="0.0">java.util.List</node>
+    <node x="126.0" y="81.0">java.util.Vector</node>
+    <node x="0.0" y="81.0">java.util.LinkedList</node>
+    <node x="352.0" y="81.0">java.util.concurrent.CopyOnWriteArrayList</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.concurrent.CopyOnWriteArrayList" target="java.util.List">
+      <point x="0.0" y="-15.5" />
+      <point x="441.0" y="51.0" />
+      <point x="251.5" y="51.0" />
+      <point x="25.5" y="15.5" />
+    </edge>
+    <edge source="java.util.Vector" target="java.util.List">
+      <point x="0.0" y="-15.5" />
+      <point x="169.5" y="61.0" />
+      <point x="217.5" y="61.0" />
+      <point x="-8.5" y="15.5" />
+    </edge>
+    <edge source="java.util.LinkedList" target="java.util.List">
+      <point x="0.0" y="-15.5" />
+      <point x="53.0" y="51.0" />
+      <point x="200.5" y="51.0" />
+      <point x="-25.5" y="15.5" />
+    </edge>
+    <edge source="java.util.ArrayList" target="java.util.List">
+      <point x="0.0" y="-15.5" />
+      <point x="282.5" y="61.0" />
+      <point x="234.5" y="61.0" />
+      <point x="8.5" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="265.0" y="56.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
