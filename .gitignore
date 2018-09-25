@@ -1,11 +1,12 @@
-/target/
+/target/*
 !.mvn/wrapper/maven-wrapper.jar
+*.class
 
 ### STS ###
 .apt_generated
 .classpath
 .factorypath
-.project
+.proje
 .settings
 .springBeans
 .sts4-cache
