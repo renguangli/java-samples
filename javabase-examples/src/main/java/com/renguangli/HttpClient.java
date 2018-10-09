@@ -1,4 +1,4 @@
-package com.renguangli.nio.examples;
+package com.renguangli;
 
 import java.io.BufferedReader;
 import java.io.IOException;
