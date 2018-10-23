@@ -13,7 +13,9 @@ import java.util.TimerTask;
 public class TimerExamples {
 
     public static void main(String[] args) {
-        // 只执行一次
+        /*
+         * 只执行一次
+         */
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -29,12 +31,17 @@ public class TimerExamples {
             }
         }, new Date(System.currentTimeMillis() + 5000));
 
-        //循环执行
+        /*
+         * 循环执行
+         */
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 System.out.println(111);
             }
         }, 1000, 2000); // 1000毫米后执行第一次，之后每2000毫米执行一次
+
+        // 终止定时任务
+        timer.cancel();
     }
 }
