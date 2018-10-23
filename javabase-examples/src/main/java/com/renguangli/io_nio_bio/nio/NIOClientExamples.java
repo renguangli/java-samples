@@ -1,4 +1,4 @@
-package com.renguangli.nio;
+package com.renguangli.io_nio_bio.nio;
 
 /**
  * NIOClientExamples

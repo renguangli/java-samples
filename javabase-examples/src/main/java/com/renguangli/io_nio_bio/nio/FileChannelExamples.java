@@ -1,8 +1,9 @@
-package com.renguangli.nio;
+package com.renguangli.io_nio_bio.nio;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
@@ -19,8 +20,11 @@ public class FileChannelExamples {
 //        String s = readFile("D:/a.txt");
 //        System.out.println(s);
 //        writeFile("sdhaha哈哈f","D:/b.txt");
-        copyFile("D:/a.pdf", "D:/b.pdf");
+//        copyFile("D:/a.pdf", "D:/b.pdf");
+        System.out.println(new BigDecimal(5.6164337E7).intValue());
+        System.out.println(new BigDecimal(5.6218325E7).intValue());
     }
+
 
     public static String readFile(String fileName) {
         StringBuilder sb = new StringBuilder();
@@ -47,7 +51,7 @@ public class FileChannelExamples {
     }
 
     /**
-     * nio 写文件
+     * io_nio_bio 写文件
      */
     public static void writeFile(String content, String fileName) {
         try (FileOutputStream out = new FileOutputStream(fileName);FileChannel fileChannel = out.getChannel()) {

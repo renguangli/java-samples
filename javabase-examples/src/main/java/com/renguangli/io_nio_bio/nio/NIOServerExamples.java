@@ -1,4 +1,4 @@
-package com.renguangli.nio;
+package com.renguangli.io_nio_bio.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -62,7 +62,6 @@ public class NIOServerExamples implements Runnable {
             System.out.println("accept 异常");
             e.printStackTrace();
         }
-
     }
 
     private void doRead(SelectionKey key) {
