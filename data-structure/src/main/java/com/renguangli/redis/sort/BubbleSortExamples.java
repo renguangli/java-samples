@@ -19,18 +19,36 @@ public class BubbleSortExamples {
      *
      * @param a 待排序数组
      */
-    public static void bubbleSort(int[] a) {
+    public void bubbleSort(int[] a) {
         int tmp,length = a.length;
-        for (int i = 0; i < length - 1; i++) { //第一层循环,比较次数
-            for (int j = 0; j < length - i - 1; j++) { //比较交换元素位置
+        for (int i = 0; i < length - 1; i++) { // 第一层循环,比较次数
+            for (int j = 0; j < length - i - 1; j++) {// 比较交换元素位置
                 if (a[j] > a[j + 1]) {
-                    tmp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = tmp;
+                    tmp = a[j + 1];
+                    a[j + 1] = a[j];
+                    a[j] = tmp;
                 }
             }
         }
     }
 
+    /*
+     * 优化冒泡排序
+     */
+    public void bubbleSort2(int[] a) {
+        int tmp,length = a.length;
+        for (int i = 0; i < length - 1; i++) { //第一层循环,比较次数
+            boolean flag = false; // 提前退出冒泡循环的标志位
+            for (int j = 0; j < length - i - 1; j++) { //比较交换元素位置
+                if (a[j] > a[j + 1]) {
+                    tmp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = tmp;
+                    flag = true; // true 表示有数据交换
+                }
+            }
+            if (!flag) break;// 没有数据交换，提前退出
+        }
+    }
 
 }
