@@ -32,7 +32,9 @@ public class RedisRateLimiter extends AbstractRateLimiter {
         }
     }
 
-    public RedisRateLimiter() {}
+    public RedisRateLimiter() {
+        super();
+    }
 
     public RedisRateLimiter(int rate) {
         super(rate);

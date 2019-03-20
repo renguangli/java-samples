@@ -12,7 +12,9 @@ public abstract class AbstractRateLimiter implements RateLimiter {
 
     protected int rate;
 
-    public AbstractRateLimiter() { }
+    public AbstractRateLimiter() {
+        this.rate = 10;
+    }
 
     public AbstractRateLimiter(int rate) {
         this.rate = rate;
