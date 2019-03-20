@@ -19,16 +19,20 @@ class MyThread1 extends Thread {
 
     @Override
     public void run() {
-        System.out.println(isInterrupted());//
-        this.interrupt();
-        System.out.println(isInterrupted());
-        System.out.println(interrupted());
-        System.out.println(isInterrupted());
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (!isInterrupted()) {
+            // 返回线程中断标志 true | false
+            System.out.println(isInterrupted());
+            this.interrupt(); // 将当前中断标志设置为 true
+            // System.out.println(Thread.interrupted()); // 返回中断标志，并清除中断标志，设置为 false
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                break;
+            }
         }
-        System.out.println(isInterrupted());
+
     }
+
+
 }
