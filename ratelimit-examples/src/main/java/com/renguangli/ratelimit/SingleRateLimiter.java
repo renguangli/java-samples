@@ -22,6 +22,7 @@ public class SingleRateLimiter extends AbstractRateLimiter {
         super(rate);
     }
 
+    @Override
     public boolean tryAcquire() {
         return tryAcquire(this.rate, 1000, TimeUnit.MILLISECONDS);
     }

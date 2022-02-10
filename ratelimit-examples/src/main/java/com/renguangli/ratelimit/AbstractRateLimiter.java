@@ -31,14 +31,17 @@ public abstract class AbstractRateLimiter implements RateLimiter {
         return time;
     }
 
+    @Override
     public boolean tryAcquire() {
         throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean tryAcquire(int rate, int expireTime, TimeUnit timeUnit) {
         throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean tryAcquire(String key, int rate, int expireTime, TimeUnit timeUnit) {
         throw new UnsupportedOperationException();
     }

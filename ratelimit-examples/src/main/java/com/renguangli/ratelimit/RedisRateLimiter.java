@@ -20,7 +20,7 @@ public class RedisRateLimiter extends AbstractRateLimiter {
 
     private static String LUA_SCRIPT = null;
 
-    private static JedisPool jedisPool;
+    private static final JedisPool jedisPool;
 
     static {
         jedisPool = new JedisPool(new JedisPoolConfig(),"172.16.11.140",6379, 2000,"123456");
@@ -40,16 +40,19 @@ public class RedisRateLimiter extends AbstractRateLimiter {
         super(rate);
     }
 
+    @Override
     public boolean tryAcquire() {
         return tryAcquire(rate, 1000, TimeUnit.MILLISECONDS);
     }
 
+    @Override
     public boolean tryAcquire(int rate, int expireTime, TimeUnit timeUnit) {
         String key = "rate.limit";
         return tryAcquire(key, rate, 1000, TimeUnit.MILLISECONDS);
 
     }
 
+    @Override
     public boolean tryAcquire(String key, int rate, int expireTime, TimeUnit timeUnit) {
         Jedis jedis = jedisPool.getResource();
         List<String> keys = Collections.singletonList(key);
