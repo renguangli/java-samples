@@ -16,11 +16,7 @@ public class Demo {
         System.out.println(a + " " + b);
     }
 
-    public Demo() {
-        System.out.println("============");
-        a++;
-        b++;
-    }
+
 
     public void m() {
         System.err.println(111111);

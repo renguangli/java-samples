@@ -3,8 +3,8 @@ package com.renguangli.redis;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import redis.clients.jedis.BinaryClient;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.args.ListPosition;
 
 /**
  * JedisListExamples
@@ -24,12 +24,12 @@ public class JedisListExamples {
         // 获取指定索引处的值
         System.out.println(jedis.lindex("list", 0));
         // 在列表中的另一个元素之前或之后插入一个元素
-        jedis.linsert("list", BinaryClient.LIST_POSITION.BEFORE, "a", "A");
-        jedis.linsert("list", BinaryClient.LIST_POSITION.AFTER, "a", "B");
+        jedis.linsert("list", ListPosition.BEFORE, "a", "A");
+        jedis.linsert("list", ListPosition.AFTER, "a", "B");
         System.out.println(jedis.lindex("list", 0));
         System.out.println(jedis.lindex("list", 2));
-        
-        
+
+
     }
 
     @Before

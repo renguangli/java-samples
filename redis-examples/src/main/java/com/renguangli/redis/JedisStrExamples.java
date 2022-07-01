@@ -43,7 +43,7 @@ public class JedisStrExamples {
         System.out.println(set);
         System.out.println(jedis.get("hello"));
 
-        jedis.set("ab", "a", "nx", "ex", 10);
+        jedis.set("heloo", "wo");
         Long a = jedis.ttl("ab");
         System.out.println(a);
     }
